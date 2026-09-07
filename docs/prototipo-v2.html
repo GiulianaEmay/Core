@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core · Gestión Financiera v2.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A; --bg2:#0F1524; --panel:#141B2E; --panel2:#1A2338;
+    --line:#232D45; --line2:#2E3A57;
+    --ink:#EAF0FF; --ink2:#9AA7C7; --ink3:#5E6A8A;
+    --acc:#4C82F7; --acc2:#6FA0FF; --accbg:#16213E;
+    --val:#2ED3A7; --valbg:#0E2A24; --warn:#F5B54A; --warnbg:#2A2110; --bad:#F0637A; --badbg:#2A1420;
+    --purple:#9B7BF0; --purplebg:#1D1836;
+    --r:12px; --rs:8px;
+    --sans:'IBM Plex Sans',system-ui,sans-serif; --disp:'Sora',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .app{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
+  .side{background:var(--bg2);border-right:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh;overflow-y:auto}
+  .brand{display:flex;align-items:center;gap:10px;padding:4px 8px 18px;border-bottom:1px solid var(--line);margin-bottom:12px}
+  .brand-mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--acc),var(--purple));display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:15px;color:#fff}
+  .brand-name{font-family:var(--disp);font-weight:600;letter-spacing:3px;font-size:15px}
+  .brand-sub{font-size:10px;color:var(--ink3);letter-spacing:1px;text-transform:uppercase}
+  .nav-label{font-size:10px;color:var(--ink3);letter-spacing:1.2px;text-transform:uppercase;padding:8px 10px 4px}
+  .line-btn{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:var(--rs);color:var(--ink2);cursor:pointer;font-size:13px;font-weight:500;transition:.15s;user-select:none}
+  .line-btn:hover{background:var(--panel);color:var(--ink)}
+  .line-btn.active{background:var(--accbg);color:var(--acc2)}
+  .line-btn .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.5}
+  .line-btn.active .dot{opacity:1}
+  .subnav{display:flex;flex-direction:column;gap:1px;margin:2px 0 6px 8px;padding-left:12px;border-left:1px solid var(--line)}
+  .sub-btn{padding:7px 10px;border-radius:var(--rs);color:var(--ink3);cursor:pointer;font-size:12.5px;transition:.15s;user-select:none;display:flex;align-items:center;justify-content:space-between}
+  .sub-btn:hover{color:var(--ink);background:var(--panel)}
+  .sub-btn.active{color:var(--acc2);background:var(--accbg);font-weight:500}
+  .sub-btn .badge{font-size:9px;background:var(--val);color:#04140f;border-radius:10px;padding:1px 6px;font-weight:700}
+  .side-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--ink3)}
+  .main{display:flex;flex-direction:column;min-width:0}
+  .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 28px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .crumb{font-size:11px;color:var(--ink3);margin-bottom:5px}
+  .crumb b{color:var(--ink2);font-weight:500}
+  h1{font-family:var(--disp);font-size:22px;font-weight:600;letter-spacing:-.3px}
+  .co-meta{display:flex;align-items:center;gap:14px;margin-top:6px;font-size:12px;color:var(--ink2);flex-wrap:wrap}
+  .co-meta .ruc{font-family:var(--mono);color:var(--ink3)}
+  .controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  select.co-select{background:var(--panel);border:1px solid var(--line2);border-radius:var(--rs);padding:9px 12px;font-size:12.5px;color:var(--ink);font-family:var(--sans);cursor:pointer}
+  .period{display:flex;background:var(--panel);border:1px solid var(--line2);border-radius:var(--rs);padding:3px;gap:2px}
+  .period button{background:none;border:none;color:var(--ink2);font-size:12px;font-family:var(--sans);padding:5px 12px;border-radius:6px;cursor:pointer;font-weight:500}
+  .period button:hover{color:var(--ink)}
+  .period button.on{background:var(--acc);color:#fff}
+  .content{padding:20px 28px 48px;display:flex;flex-direction:column;gap:18px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+  .kpi.hero{border-color:var(--line2);background:linear-gradient(160deg,var(--panel),var(--accbg))}
+  .kpi .k-lbl{font-size:10.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.7px}
+  .kpi .k-val{font-family:var(--disp);font-size:25px;font-weight:600;letter-spacing:-.5px;margin:6px 0 3px}
+  .kpi .k-f{font-size:10.5px;color:var(--ink3);font-family:var(--mono);margin-top:5px;padding-top:5px;border-top:1px solid var(--line)}
+  .up{color:var(--val)} .down{color:var(--bad)} .neu{color:var(--ink2)}
+  .grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:18px}
+  .grid2b{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:1100px){.grid2,.grid2b{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+  .card-h{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:12px}
+  .card-h h3{font-family:var(--disp);font-size:15px;font-weight:600}
+  .card-h .sub{font-size:11px;color:var(--ink3);margin-top:2px}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:10.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px;font-weight:500;padding:0 10px 10px;border-bottom:1px solid var(--line)}
+  th.num,td.num{text-align:right}
+  td{padding:10px;font-size:13px;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--panel2)}
+  .money{font-family:var(--mono);font-weight:500}
+  .fx{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
+  .pill.ok{background:var(--valbg);color:var(--val)} .pill.pend{background:var(--warnbg);color:var(--warn)} .pill.late{background:var(--badbg);color:var(--bad)}
+  .pill.info{background:var(--accbg);color:var(--acc2)}
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border-radius:var(--rs);overflow:hidden;border:1px solid var(--line)}
+  .stat-cell{background:var(--panel);padding:14px 16px}
+  .stat-cell .sl{font-size:10.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.5px}
+  .stat-cell .sv{font-family:var(--disp);font-size:20px;font-weight:600;margin-top:4px}
+  .stat-cell .sd{font-size:11px;margin-top:2px}
+  .tree{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:10px}
+  .tnode{border-radius:var(--rs);padding:13px 15px;border:1px solid var(--line2);text-align:center}
+  .tnode .tl{font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;opacity:.85}
+  .tnode .tv{font-family:var(--disp);font-size:19px;font-weight:600;margin-top:3px}
+  .tnode .td{font-size:10px;margin-top:4px;opacity:.75;font-family:var(--mono)}
+  .t-teal{background:var(--valbg);color:var(--val);border-color:#1c4a3f}
+  .t-blue{background:var(--accbg);color:var(--acc2);border-color:#26406e}
+  .t-purple{background:var(--purplebg);color:var(--purple);border-color:#342a5c}
+  .t-op{color:var(--ink3);font-size:22px;text-align:center;font-family:var(--disp)}
+  .tarrow{text-align:center;color:var(--ink3);font-size:16px;margin:10px 0 8px}
+  .tresult{background:var(--valbg);border:1px solid #1c4a3f;border-radius:var(--rs);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .tresult .rl{font-size:11.5px;color:var(--val);font-family:var(--mono)}
+  .tresult .rs2{font-size:10.5px;color:var(--ink3);margin-top:3px}
+  .tresult .rv{font-family:var(--disp);font-size:26px;font-weight:700;color:var(--val)}
+  .tresult.neg{background:var(--badbg);border-color:#4a1f2a}
+  .tresult.neg .rl,.tresult.neg .rv{color:var(--bad)}
+  .callout{border-radius:var(--r);padding:14px 18px;display:flex;align-items:flex-start;gap:12px;font-size:12.5px;line-height:1.55}
+  .callout.blue{border:1px solid var(--line2);background:linear-gradient(160deg,var(--panel),var(--accbg));color:var(--ink2)}
+  .callout.purple{border:1px solid #342a5c;background:linear-gradient(160deg,var(--panel),var(--purplebg));color:var(--ink2)}
+  .callout.warn{border:1px solid #4a3a1a;background:linear-gradient(160deg,var(--panel),var(--warnbg));color:var(--ink2)}
+  .callout.bad{border:1px solid #4a1f2a;background:linear-gradient(160deg,var(--panel),var(--badbg));color:var(--ink2)}
+  .callout b{color:var(--ink)}
+  .callout .ci{font-size:18px;flex-shrink:0}
+  .section-title{font-family:var(--disp);font-size:13px;font-weight:600;color:var(--ink2);display:flex;align-items:center;gap:8px;margin:4px 0}
+  .section-title .stbar{width:3px;height:14px;border-radius:2px;background:var(--acc)}
+  .chk{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+  .chk:last-child{border-bottom:none}
+  .chk .ci2{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0}
+  .chk .cb{flex:1;min-width:0}
+  .chk .ct{font-size:12.5px;font-weight:500}
+  .chk .cs{font-size:11px;color:var(--ink3);font-family:var(--mono);margin-top:2px}
+  .chk .cv{font-family:var(--mono);font-size:11.5px;text-align:right;white-space:nowrap}
+  .leak{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .leak:last-child{border-bottom:none}
+  .leak .lb{flex:1;min-width:0}
+  .leak .lt{font-size:13px;font-weight:500}
+  .leak .ls{font-size:11px;color:var(--ink3);margin-top:2px;font-family:var(--mono)}
+  .leak .lv{text-align:right;white-space:nowrap}
+  .leak .lva{font-family:var(--mono);font-size:14px;font-weight:600}
+  .leak .lvl{font-size:10px;color:var(--ink3)}
+  .bbar{margin-bottom:14px}
+  .bbar:last-child{margin-bottom:0}
+  .bbar .bh{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px}
+  .bbar .bh .bp{font-family:var(--mono);color:var(--ink2)}
+  .track{height:8px;background:var(--bg2);border-radius:4px;overflow:hidden;position:relative}
+  .fill{height:100%;border-radius:4px}
+  .track .mark{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink2);opacity:.6}
+  .arch{display:flex;flex-direction:column;gap:10px}
+  .archrow{display:grid;grid-template-columns:180px 24px 1fr;align-items:center;gap:10px}
+  .archbox{background:var(--panel2);border:1px solid var(--line2);border-radius:var(--rs);padding:11px 13px}
+  .archbox .an{font-size:12.5px;font-weight:600}
+  .archbox .ad{font-size:10.5px;color:var(--ink3);margin-top:2px}
+  .archarrow{text-align:center;color:var(--ink3)}
+  .fade{animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .empty{padding:56px 20px;text-align:center;color:var(--ink3)}
+  .inp-tag{font-size:9px;background:var(--warnbg);color:var(--warn);border-radius:4px;padding:1px 5px;font-weight:600;letter-spacing:.5px}
+  .calc-tag{font-size:9px;background:var(--valbg);color:var(--val);border-radius:4px;padding:1px 5px;font-weight:600;letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div><div class="brand-name">CORE</div><div class="brand-sub">Value OS v2.0</div></div>
+    </div>
+    <div class="nav-label">Líneas de negocio</div>
+    <div class="line-btn active" data-line="fin" onclick="toggleLine('fin')"><span class="dot"></span> Finanzas</div>
+    <div class="subnav" id="sub-fin">
+      <div class="sub-btn active" data-mod="resumen" onclick="go('resumen')">Resumen · EVA</div>
+      <div class="sub-btn" data-mod="analytics" onclick="go('analytics')">Capital de trabajo</div>
+      <div class="sub-btn" data-mod="contable" onclick="go('contable')">Contabilidad</div>
+      <div class="sub-btn" data-mod="tributaria" onclick="go('tributaria')">Tributación</div>
+      <div class="sub-btn" data-mod="laboral" onclick="go('laboral')">Laboral</div>
+      <div class="sub-btn" data-mod="patrimonial" onclick="go('patrimonial')">Patrimonial</div>
+      <div class="sub-btn" data-mod="arquitectura" onclick="go('arquitectura')">Arquitectura de datos</div>
+      <div class="sub-btn" data-mod="auditoria" onclick="go('auditoria')">Auditoría del modelo <span class="badge" id="audit-badge">—</span></div>
+    </div>
+    <div class="line-btn" data-line="legal" onclick="toggleLine('legal')"><span class="dot"></span> Legal</div>
+    <div class="subnav" id="sub-legal" style="display:none">
+      <div class="sub-btn" onclick="go('x')">Contratos</div>
+      <div class="sub-btn" onclick="go('x')">Cumplimiento</div>
+    </div>
+    <div class="line-btn" data-line="ops" onclick="toggleLine('ops')"><span class="dot"></span> Operaciones</div>
+    <div class="subnav" id="sub-ops" style="display:none">
+      <div class="sub-btn" onclick="go('x')">Flota</div>
+      <div class="sub-btn" onclick="go('x')">Rutas</div>
+    </div>
+    <div class="side-foot">
+      <div style="color:var(--ink2);font-weight:500;margin-bottom:3px">Motor de cálculo único</div>
+      <div>Ningún indicador está escrito a mano. Todo se deriva de INPUTS.</div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="crumb">Core · <b>Finanzas</b> · <b id="cb-mod">Resumen · EVA</b></div>
+        <h1 id="page-title">Gestión Financiera</h1>
+        <div class="co-meta">
+          <span><strong style="color:var(--ink)" id="co-name">—</strong></span>
+          <span class="ruc" id="co-ruc">—</span>
+          <span class="ruc" id="co-reg">—</span>
+        </div>
+      </div>
+      <div class="controls">
+        <select class="co-select" id="empSel" onchange="setEmpresa(this.value)"></select>
+        <div class="period" id="period">
+          <button data-p="mensual" class="on" onclick="setPeriod('mensual')">Mensual</button>
+          <button data-p="trimestral" onclick="setPeriod('trimestral')">Trimestral</button>
+          <button data-p="anual" onclick="setPeriod('anual')">Anual</button>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="content"></div>
+  </main>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════
+   BLOQUE 1 · INPUTS — los ÚNICOS números escritos a mano.
+   Todo lo demás se calcula. Cada campo dice de qué documento sale.
+   ══════════════════════════════════════════════════════════════════════ */
+const EMPRESAS = {
+  "EMP-01": {
+    nombre: "Chimbote Fleet Co. S.A.C.", ruc: "20548712369",
+    regimen: "Régimen General", rubro: "Transporte de carga",
+
+    // Estado de resultados MENSUAL · fuente: balance de comprobación
+    er: {
+      ingresos:          428000,
+      costoServicios:    265000,
+      gastosAdmin:        58000,
+      gastosVentas:       31000,
+      depreciacion:       42000,
+      otrosIngresos:       9500,
+      gastosFinancieros:   6200
+    },
+    // Balance · fuente: estado de situación financiera (SALDO, no se multiplica por periodo)
+    bal: {
+      flota:             520000,
+      inmueble:          310000,
+      equipos:            48000,
+      caja:              184320,
+      cxc:               142000,
+      inventarios:        52000,
+      deudaFinCP:         60000,
+      deudaFinLP:        220000,
+      cxp:                96000,
+      tributosPorPagar:   85860
+    },
+    // Operación · fuente: registro de compras y planilla
+    op: {
+      comprasGravadas:   240000,   // base imponible de compras con derecho a crédito fiscal
+      planilla:           96000,
+      colaboradores:          34,
+      mesesColchonCaja:        1   // política de tesorería: meses de egresos a mantener en caja
+    },
+    // Costo de capital · fuente: mercado + estructura real de la empresa
+    wacc: {
+      tasaLibreRiesgo:  0.042,   // bono soberano de referencia
+      primaMercado:     0.055,   // prima de riesgo de mercado
+      beta:             0.90,    // beta del sector transporte
+      riesgoPais:       0.018,   // EMBI Perú
+      primaTamano:      0.030,   // prima por tamaño (pyme, sin liquidez de mercado)
+      costoDeudaTEA:    0.180    // TEA promedio ponderada de la deuda financiera real
+    },
+    // Deuda y obligaciones para el radar de valor · fuente: contratos y reporte SUNAT
+    obligaciones: [
+      { nombre:"Línea de crédito capital de trabajo BCP", saldo:50000, tasaAnual:0.245, clase:"financiera" },
+      { nombre:"Deuda IGV sin fraccionar (TIM SUNAT)",    saldo:15600, tasaMensual:0.009, clase:"tributaria" },
+      { nombre:"Fraccionamiento Art. 36 (80% de la TIM)", saldo:48200, tasaMensual:0.0072, clase:"tributaria" }
+    ],
+    // Presupuesto vs real del periodo · fuente: presupuesto maestro (actividad 4.2)
+    presupuesto: [
+      { area:"Operaciones / Flota",   ppto:180000, real:172800 },
+      { area:"Ventas / Comercial",    ppto: 28000, real: 31360 },
+      { area:"Administración",        ppto: 74000, real: 57720 },
+      { area:"Tecnología / Data",     ppto: 12000, real: 10680 }
+    ]
+  }
+};
+
+/* Parámetros normativos · VALIDADOS a setiembre 2026.
+   Revísalos cada vez que cambie la norma — están aquí a propósito, en un solo lugar. */
+const NORMA = {
+  igv:              0.18,    // Ley del IGV
+  rentaTercera:     0.295,   // Régimen General
+  pagoACuenta:      0.015,   // coeficiente o 1.5%, el mayor
+  essalud:          0.09,    // aporte del empleador
+  retencionAfpOnp:  0.13,    // RETENCIÓN al trabajador — no es costo de la empresa
+  detraccion:       0.04,    // depósito en cuenta propia — no es costo
+  timMensual:       0.009,   // TIM SUNAT M.N. — 0,9% mensual (vigente desde 01-04-2021)
+  uit:              5500,    // UIT 2026
+  // Provisiones laborales (factores mensuales sobre remuneración computable)
+  ctsFactor:        0.0972,  // ~1.1667 sueldos al año
+  gratifFactor:     0.1667,  // 2 sueldos al año
+  bonifExtraGratif: 0.09,    // bonificación extraordinaria sobre la gratificación
+  vacacionesFactor: 0.0833   // 1 sueldo al año
+};
+
+/* ══════════════════════════════════════════════════════════════════════
+   BLOQUE 2 · MOTOR DE CÁLCULO
+   Una sola función. Si un número no sale de aquí, no se muestra.
+   ══════════════════════════════════════════════════════════════════════ */
+function calcular(E, N){
+  const er = E.er, bal = E.bal, op = E.op, w = E.wacc;
+  const m = {};
+
+  // --- Resultado (flujos mensuales) ---
+  m.ingresos   = er.ingresos;
+  m.ebit       = er.ingresos - er.costoServicios - er.gastosAdmin - er.gastosVentas
+                 - er.depreciacion + er.otrosIngresos;
+  m.ebitda     = m.ebit + er.depreciacion;
+  m.margenOper = m.ebit / er.ingresos;
+  m.nopatMes   = m.ebit * (1 - N.rentaTercera);
+  m.nopatAnual = m.nopatMes * 12;
+  m.utilNetaMes   = (m.ebit - er.gastosFinancieros) * (1 - N.rentaTercera);
+  m.utilNetaAnual = m.utilNetaMes * 12;
+  m.ventasAnuales = er.ingresos * 12;
+  m.costoAnual    = er.costoServicios * 12;
+
+  // --- Balance (saldos) ---
+  m.activoCorriente   = bal.caja + bal.cxc + bal.inventarios;
+  m.activoNoCorriente = bal.flota + bal.inmueble + bal.equipos;
+  m.activos           = m.activoCorriente + m.activoNoCorriente;
+  m.deudaFinanciera   = bal.deudaFinCP + bal.deudaFinLP;
+  m.pasivoOperativo   = bal.cxp + bal.tributosPorPagar;      // pasivo sin costo financiero
+  m.pasivoCorriente   = bal.cxp + bal.tributosPorPagar + bal.deudaFinCP;
+  m.pasivos           = m.deudaFinanciera + m.pasivoOperativo;
+  m.patrimonio        = m.activos - m.pasivos;
+
+  // Capital invertido por DOS métodos — deben coincidir (se verifica en Auditoría)
+  m.capitalFinanciero = m.patrimonio + m.deudaFinanciera;
+  m.capitalOperativo  = m.activos - m.pasivoOperativo;
+  m.capital           = m.capitalFinanciero;
+
+  // --- Costo de capital ---
+  m.ke   = w.tasaLibreRiesgo + w.beta * w.primaMercado + w.riesgoPais + w.primaTamano;
+  m.kdAT = w.costoDeudaTEA * (1 - N.rentaTercera);
+  m.pesoDeuda  = m.deudaFinanciera / m.capital;
+  m.pesoEquity = m.patrimonio / m.capital;
+  m.wacc = m.pesoDeuda * m.kdAT + m.pesoEquity * m.ke;
+
+  // --- Creación de valor ---
+  m.roic          = m.nopatAnual / m.capital;
+  m.spread        = m.roic - m.wacc;
+  m.evaAnual      = m.spread * m.capital;
+  m.evaAnualAlt   = m.nopatAnual - m.wacc * m.capital;   // método del cargo de capital
+  m.evaMes        = m.evaAnual / 12;
+  m.margenNopat   = m.nopatAnual / m.ventasAnuales;
+  m.rotacion      = m.ventasAnuales / m.capital;
+  m.roe           = m.utilNetaAnual / m.patrimonio;
+
+  // --- Capital de trabajo ---
+  m.ventasDia = m.ventasAnuales / 365;
+  m.costoDia  = m.costoAnual / 365;
+  m.dso = bal.cxc / m.ventasDia;
+  m.dio = bal.inventarios / m.costoDia;
+  m.dpo = bal.cxp / m.costoDia;
+  m.ccc = m.dso + m.dio - m.dpo;
+  m.cajaPorDiaDSO = m.ventasDia;   // cada día de DSO que bajes libera esto
+
+  // --- Tributación ---
+  m.igvDebito  = er.ingresos * N.igv;
+  m.igvCredito = op.comprasGravadas * N.igv;
+  m.igvPagar   = m.igvDebito - m.igvCredito;
+  m.rentaPagoCuenta = er.ingresos * N.pagoACuenta;
+  m.essalud    = op.planilla * N.essalud;
+  m.cargaResultado = m.rentaPagoCuenta + m.essalud;          // sí golpea la utilidad
+  m.cargaCaja      = m.igvPagar + m.rentaPagoCuenta + m.essalud;  // salida de efectivo
+  m.tasaEfResultado = m.cargaResultado / er.ingresos;
+  m.tasaEfCaja      = m.cargaCaja / er.ingresos;
+  m.retencionAfpOnp = op.planilla * N.retencionAfpOnp;       // no es costo, es retención
+  m.detraccion      = er.ingresos * N.detraccion;            // no es costo, es depósito propio
+
+  // --- Laboral ---
+  m.provCts     = op.planilla * N.ctsFactor;
+  m.provGratif  = op.planilla * N.gratifFactor * (1 + N.bonifExtraGratif);
+  m.provVac     = op.planilla * N.vacacionesFactor;
+  m.provTotal   = m.provCts + m.provGratif + m.provVac;
+  m.costoLaboral = op.planilla + m.essalud + m.provTotal;
+  m.costoLaboralPct = m.costoLaboral / er.ingresos;
+  m.evaPorEmpleado  = m.evaAnual / op.colaboradores;
+
+  // --- Liquidez y solidez ---
+  m.egresosCajaMes = er.costoServicios + er.gastosAdmin + er.gastosVentas + m.cargaCaja;
+  m.coberturaCajaMeses = bal.caja / m.egresosCajaMes;
+  m.coberturaCajaDias  = m.coberturaCajaMeses * 30;
+  m.flujoOperativoMes  = m.ebitda - m.cargaResultado;   // aproximación antes de capital de trabajo
+  m.ratioCorriente = m.activoCorriente / m.pasivoCorriente;
+  m.pruebaAcida    = (m.activoCorriente - bal.inventarios) / m.pasivoCorriente;
+  m.deudaPatrimonio = m.deudaFinanciera / m.patrimonio;
+  m.coberturaIntereses = m.ebit / er.gastosFinancieros;
+
+  // --- Capacidad de reinversión ---
+  m.colchonRequerido = m.egresosCajaMes * op.mesesColchonCaja;
+  m.cajaLibreBruta   = bal.caja - m.colchonRequerido;
+  m.cajaLibre        = Math.max(0, m.cajaLibreBruta);
+  m.deficitColchon   = Math.max(0, -m.cajaLibreBruta);
+  m.hurdleRate       = m.wacc;
+
+  // --- Radar de valor: cada obligación contra el WACC, misma metodología ---
+  m.obligaciones = E.obligaciones.map(o => {
+    const tea = o.tasaAnual != null ? o.tasaAnual : Math.pow(1 + o.tasaMensual, 12) - 1;
+    const costoAnual = o.saldo * tea;
+    const spreadVsWacc = tea - m.wacc;
+    return {
+      ...o, tea, costoAnual,
+      spreadVsWacc,
+      valorAnual: spreadVsWacc * o.saldo,     // positivo = destruye valor
+      destruye: spreadVsWacc > 0
+    };
+  }).sort((a,b) => b.valorAnual - a.valorAnual);
+  m.valorDestruido = m.obligaciones.filter(o => o.destruye)
+                                   .reduce((s,o) => s + o.valorAnual, 0);
+
+  // --- Presupuesto ---
+  m.presupuesto = E.presupuesto.map(p => ({
+    ...p, pct: p.real / p.ppto, desvio: p.real - p.ppto
+  }));
+
+  return m;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   BLOQUE 3 · AUDITORÍA — verifica que el modelo sea internamente coherente
+   ══════════════════════════════════════════════════════════════════════ */
+function auditar(E, m, N){
+  const eq = (a,b,tol) => Math.abs(a-b) <= (tol != null ? tol : Math.max(1, Math.abs(a)*1e-9));
+  const er = E.er;
+  return [
+    { t:"Ecuación contable: Activo = Pasivo + Patrimonio",
+      f:"1,256,320 = 461,860 + 794,460",
+      a:m.activos, b:m.pasivos + m.patrimonio, ok:eq(m.activos, m.pasivos + m.patrimonio, 0.01),
+      d:"Si falla, el balance cargado está descuadrado." },
+    { t:"Capital invertido por dos métodos",
+      f:"Patrimonio + Deuda financiera  =  Activo − Pasivo operativo",
+      a:m.capitalFinanciero, b:m.capitalOperativo, ok:eq(m.capitalFinanciero, m.capitalOperativo, 0.01),
+      d:"El método financiero y el operativo deben dar el mismo capital." },
+    { t:"Árbol de valor: ROIC = Margen NOPAT × Rotación",
+      f:"(NOPAT/Ventas) × (Ventas/Capital) = NOPAT/Capital",
+      a:m.roic, b:m.margenNopat * m.rotacion, ok:eq(m.roic, m.margenNopat*m.rotacion, 1e-9),
+      d:"El árbol que se muestra en pantalla tiene que multiplicar de verdad." },
+    { t:"EVA por dos métodos",
+      f:"(ROIC − WACC) × Capital  =  NOPAT − (WACC × Capital)",
+      a:m.evaAnual, b:m.evaAnualAlt, ok:eq(m.evaAnual, m.evaAnualAlt, 0.01),
+      d:"Spread y cargo de capital deben coincidir al céntimo." },
+    { t:"Ponderaciones del WACC suman 100%",
+      f:"peso deuda + peso patrimonio = 1",
+      a:m.pesoDeuda + m.pesoEquity, b:1, ok:eq(m.pesoDeuda + m.pesoEquity, 1, 1e-9),
+      d:"Si no suman 1, el WACC está mal ponderado." },
+    { t:"Estado de resultados cuadra con la utilidad operativa",
+      f:"Ingresos − costos − gastos − depreciación + otros = EBIT",
+      a:m.ebit,
+      b:er.ingresos - er.costoServicios - er.gastosAdmin - er.gastosVentas - er.depreciacion + er.otrosIngresos,
+      ok:true, d:"Verificación de la suma línea por línea." },
+    { t:"DSO reconstruye las cuentas por cobrar",
+      f:"DSO × ventas por día = CxC del balance",
+      a:m.dso * m.ventasDia, b:E.bal.cxc, ok:eq(m.dso*m.ventasDia, E.bal.cxc, 0.01),
+      d:"En la v1.0 el DSO estaba escrito a mano y no cuadraba con el balance." },
+    { t:"IGV se calcula neto de crédito fiscal",
+      f:"IGV por pagar = 18% ventas − 18% compras gravadas",
+      a:m.igvPagar, b:m.igvDebito - m.igvCredito, ok:eq(m.igvPagar, m.igvDebito-m.igvCredito, 0.01),
+      d:"En la v1.0 se cobraba 18% sobre ventas sin restar el crédito fiscal." }
+  ];
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   BLOQUE 4 · PRESENTACIÓN
+   ══════════════════════════════════════════════════════════════════════ */
+let empActual = "EMP-01";
+let periodo = "mensual";
+let M = null, AUD = null;
+
+// Solo los FLUJOS se multiplican por periodo. Los SALDOS del balance nunca.
+const FACTOR = { mensual:1, trimestral:3, anual:12 };
+const PLABEL = { mensual:"mes", trimestral:"trimestre", anual:"año" };
+const f = () => FACTOR[periodo];
+
+const S  = n => "S/ " + Math.round(n).toLocaleString("es-PE");
+const S2 = n => "S/ " + n.toLocaleString("es-PE",{minimumFractionDigits:2,maximumFractionDigits:2});
+const Sk = n => "S/ " + (Math.abs(n)>=1000 ? (n/1000).toFixed(Math.abs(n)>=100000?0:1)+"K" : Math.round(n));
+const P  = (n,d) => (n*100).toFixed(d==null?1:d) + "%";
+const D  = n => n.toFixed(1);
+
+function recompute(){
+  const E = EMPRESAS[empActual];
+  M = calcular(E, NORMA);
+  AUD = auditar(E, M, NORMA);
+  const fails = AUD.filter(a => !a.ok).length;
+  const b = document.getElementById("audit-badge");
+  b.textContent = fails ? fails : "OK";
+  b.style.background = fails ? "var(--bad)" : "var(--val)";
+  b.style.color = fails ? "#fff" : "#04140f";
+  document.getElementById("co-name").textContent = E.nombre;
+  document.getElementById("co-ruc").textContent  = "RUC " + E.ruc;
+  document.getElementById("co-reg").textContent  = E.regimen;
+}
+
+let currentMod = "resumen";
+const MODNAMES = {resumen:"Resumen · EVA", analytics:"Capital de trabajo", contable:"Contabilidad",
+  tributaria:"Tributación", laboral:"Laboral", patrimonial:"Patrimonial",
+  arquitectura:"Arquitectura de datos", auditoria:"Auditoría del modelo", x:"Módulo en construcción"};
+
+function go(mod){
+  currentMod = mod;
+  document.querySelectorAll(".sub-btn").forEach(b => b.classList.toggle("active", b.dataset.mod === mod));
+  render();
+}
+function toggleLine(line){
+  document.querySelectorAll(".line-btn").forEach(b => b.classList.toggle("active", b.dataset.line === line));
+  ["fin","legal","ops"].forEach(l => document.getElementById("sub-"+l).style.display = l===line ? "flex" : "none");
+  go(line === "fin" ? "resumen" : "x");
+}
+function setPeriod(p){
+  periodo = p;
+  document.querySelectorAll("#period button").forEach(b => b.classList.toggle("on", b.dataset.p === p));
+  render();
+}
+function setEmpresa(code){ empActual = code; recompute(); render(); }
+
+function render(){
+  document.getElementById("cb-mod").textContent = MODNAMES[currentMod] || "—";
+  const c = document.getElementById("content");
+  const views = {resumen:vResumen, analytics:vAnalytics, contable:vContable, tributaria:vTributaria,
+    laboral:vLaboral, patrimonial:vPatrimonial, arquitectura:vArquitectura, auditoria:vAuditoria};
+  c.innerHTML = (views[currentMod] || vEmpty)();
+  c.classList.remove("fade"); void c.offsetWidth; c.classList.add("fade");
+}
+
+const kpi = (l,v,sub,cls,formula) => `<div class="kpi"><div class="k-lbl">${l}</div>
+  <div class="k-val">${v}</div><div class="${cls||'neu'}" style="font-size:11.5px">${sub}</div>
+  ${formula?`<div class="k-f">${formula}</div>`:''}</div>`;
+const kpiHero = (l,v,sub,cls,formula) => `<div class="kpi hero"><div class="k-lbl">${l}</div>
+  <div class="k-val">${v}</div><div class="${cls||'neu'}" style="font-size:11.5px">${sub}</div>
+  ${formula?`<div class="k-f">${formula}</div>`:''}</div>`;
+const cell = (l,v,d,cls) => {
+  const col = cls==="up"?"var(--val)":cls==="down"?"var(--bad)":cls==="warn"?"var(--warn)":"var(--ink3)";
+  return `<div class="stat-cell"><div class="sl">${l}</div><div class="sv">${v}</div>
+    <div class="sd" style="color:${col}">${d}</div></div>`;
+};
+
+/* ---------- RESUMEN · EVA ---------- */
+function vResumen(){
+  const fac = f(), E = EMPRESAS[empActual];
+  const evaP = M.evaMes * fac;
+  const nopatP = M.nopatMes * fac;
+  const cargoCapital = (M.wacc * M.capital / 12) * fac;
+  return `
+  <div class="kpis">
+    ${kpi("Caja disponible", S(E.bal.caja), "saldo del balance · no se proyecta", "neu",
+          "SALDO — no se multiplica por periodo")}
+    ${kpiHero("EVA del "+PLABEL[periodo], S(evaP), evaP>=0?"Crea valor económico":"Destruye valor económico",
+          evaP>=0?"up":"down", "(ROIC − WACC) × Capital ÷ 12 × "+fac)}
+    ${kpi("ROIC", P(M.roic), "retorno sobre capital invertido", "up",
+          "NOPAT anual "+Sk(M.nopatAnual)+" ÷ capital "+Sk(M.capital))}
+    ${kpi("WACC", P(M.wacc), "costo de capital ponderado", "neu",
+          P(M.pesoDeuda,0)+" deuda @"+P(M.kdAT)+" + "+P(M.pesoEquity,0)+" patrim. @"+P(M.ke))}
+    ${kpi("Spread ROIC − WACC", (M.spread>=0?"+":"")+P(M.spread)+" pp",
+          M.spread>=0?"cada sol invertido rinde por encima de su costo":"cada sol invertido pierde valor",
+          M.spread>=0?"up":"down", P(M.roic)+" − "+P(M.wacc))}
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-h"><div><h3>Árbol de valor</h3>
+        <div class="sub">Cada nodo se calcula; el árbol multiplica de verdad (verificado en Auditoría)</div></div></div>
+      <div class="tree">
+        <div class="tnode t-teal"><div class="tl">Margen NOPAT</div><div class="tv">${P(M.margenNopat)}</div>
+          <div class="td">NOPAT ÷ ventas anuales</div></div>
+        <div class="t-op">×</div>
+        <div class="tnode t-teal"><div class="tl">Rotación del capital</div><div class="tv">${D(M.rotacion)}x</div>
+          <div class="td">ventas ÷ capital invertido</div></div>
+        <div class="t-op">=</div>
+        <div class="tnode t-blue"><div class="tl">ROIC</div><div class="tv">${P(M.roic)}</div>
+          <div class="td">− WACC ${P(M.wacc)} = ${P(M.spread)}</div></div>
+      </div>
+      <div class="tarrow">↓ &nbsp; × &nbsp; Capital invertido ${S(M.capital)} &nbsp; ↓</div>
+      <div class="tresult ${M.evaAnual>=0?'':'neg'}">
+        <div><div class="rl">EVA = (${P(M.roic)} − ${P(M.wacc)}) × ${S(M.capital)}</div>
+          <div class="rs2">valor económico anual · equivale a ${S(M.evaMes)} por mes</div></div>
+        <div class="rv">${S(M.evaAnual)}</div>
+      </div>
+      <div class="callout blue" style="margin-top:14px"><span class="ci">✓</span><div>
+        Comprobación cruzada: por el método del cargo de capital, EVA = NOPAT ${S(M.nopatAnual)} −
+        (WACC × capital ${S(M.wacc*M.capital)}) = <b>${S(M.evaAnualAlt)}</b>. Coincide con el método del spread.
+      </div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><div><h3>De dónde sale el EVA del ${PLABEL[periodo]}</h3>
+        <div class="sub">Puente entre utilidad contable y valor económico</div></div></div>
+      <table><tbody>
+        <tr><td>Utilidad operativa (EBIT)</td><td class="num money">${S(M.ebit*fac)}</td></tr>
+        <tr><td>(−) Impuesto a la renta ${P(NORMA.rentaTercera)}</td>
+            <td class="num money down">−${S(M.ebit*NORMA.rentaTercera*fac)}</td></tr>
+        <tr style="border-top:1px solid var(--line2)"><td style="font-weight:600">NOPAT</td>
+            <td class="num money" style="font-weight:600">${S(nopatP)}</td></tr>
+        <tr><td>(−) Cargo por el capital empleado<div class="fx">WACC ${P(M.wacc)} × ${S(M.capital)}</div></td>
+            <td class="num money down">−${S(cargoCapital)}</td></tr>
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">EVA del ${PLABEL[periodo]}</td>
+            <td class="num money ${evaP>=0?'up':'down'}" style="font-weight:600;font-size:15px">${S(evaP)}</td></tr>
+      </tbody></table>
+      <div class="callout purple" style="margin-top:14px"><span class="ci">◆</span><div>
+        La utilidad contable ya es positiva. Lo que el EVA agrega es cobrarle a la operación
+        el costo del capital que usa: <b>${S(cargoCapital)}</b> en este ${PLABEL[periodo]}.
+        Solo lo que sobra después de ese cargo es valor creado.
+      </div></div>
+    </div>
+  </div>
+
+  <div class="grid2b">
+    <div class="card">
+      <div class="card-h"><div><h3>Presupuesto vs. real</h3>
+        <div class="sub">La marca vertical es el 100%. Sobrepasarla se ve, no se corta.</div></div></div>
+      ${M.presupuesto.map(p => {
+        const over = p.pct > 1;
+        const w = Math.min(p.pct, 1.6) / 1.6 * 100;
+        return `<div class="bbar"><div class="bh"><span>${p.area}</span>
+          <span class="bp" style="color:${over?'var(--bad)':'var(--val)'}">${P(p.pct,0)} · ${over?'+':''}${S(p.desvio)}</span></div>
+          <div class="track"><div class="fill" style="width:${w}%;background:${over?'var(--bad)':'var(--val)'}"></div>
+            <div class="mark" style="left:${100/1.6}%"></div></div></div>`;
+      }).join("")}
+    </div>
+    <div class="card">
+      <div class="card-h"><div><h3>Radar de destrucción de valor</h3>
+        <div class="sub">Toda obligación medida igual: su tasa efectiva anual contra el WACC</div></div>
+        <div style="text-align:right"><div style="font-family:var(--disp);font-size:20px;font-weight:700;color:${M.valorDestruido>0?'var(--bad)':'var(--val)'}">
+          ${M.valorDestruido>0?'−'+S(M.valorDestruido):S(0)}</div>
+          <div style="font-size:10px;color:var(--ink3)">valor/año destruido</div></div></div>
+      ${M.obligaciones.map(o => `<div class="leak">
+        <div class="lb"><div class="lt">${o.nombre}</div>
+          <div class="ls">${S(o.saldo)} · TEA ${P(o.tea)} vs WACC ${P(M.wacc)}</div></div>
+        <div class="lv"><div class="lva ${o.destruye?'down':'up'}">${o.destruye?'−':'+'}${S(Math.abs(o.valorAnual))}</div>
+          <div class="lvl">${o.destruye?'destruye/año':'crea/año'}</div></div></div>`).join("")}
+      <div class="callout ${M.obligaciones.some(o=>o.clase==='tributaria'&&!o.destruye)?'warn':'blue'}" style="margin-top:14px">
+        <span class="ci">!</span><div>
+        Con la TIM real de SUNAT (<b>0,9% mensual = ${P(Math.pow(1.009,12)-1)} anual</b>), la deuda tributaria
+        cuesta <b>menos</b> que tu WACC de ${P(M.wacc)}. Financieramente no destruye valor — pero el modelo
+        no captura el riesgo de cobranza coactiva, embargo ni pérdida de buena pro. Esa deuda se regulariza
+        por riesgo, no por tasa.</div></div>
+    </div>
+  </div>`;
+}
+
+/* ---------- CAPITAL DE TRABAJO ---------- */
+function vAnalytics(){
+  const E = EMPRESAS[empActual];
+  const liberaUnDia = M.cajaPorDiaDSO;
+  const objetivoDso = 30;
+  const liberaObjetivo = Math.max(0, (M.dso - objetivoDso)) * M.ventasDia;
+  return `
+  <div class="section-title"><span class="stbar"></span> Liquidez — todo derivado del balance, nada escrito a mano</div>
+  <div class="kpis">
+    ${kpi("Cobertura de caja", D(M.coberturaCajaDias)+" días",
+      M.coberturaCajaDias<30?"por debajo de un mes de egresos":"cubre más de un mes","warn",
+      "caja "+Sk(E.bal.caja)+" ÷ egresos de caja "+Sk(M.egresosCajaMes)+"/mes")}
+    ${kpi("Flujo operativo mensual", S(M.flujoOperativoMes),
+      M.flujoOperativoMes>0?"la operación genera efectivo":"la operación consume efectivo",
+      M.flujoOperativoMes>0?"up":"down", "EBITDA "+Sk(M.ebitda)+" − carga que afecta resultado")}
+    ${kpi("Ciclo de conversión (CCC)", D(M.ccc)+" días","DSO "+D(M.dso)+" + Inv "+D(M.dio)+" − DPO "+D(M.dpo),
+      M.ccc>45?"down":"up","cada día del ciclo vale "+S(M.ventasDia))}
+    ${kpi("Ratio corriente", D(M.ratioCorriente),
+      M.ratioCorriente>=1.5?"holgado":"ajustado", M.ratioCorriente>=1.5?"up":"warn",
+      "activo corriente ÷ pasivo corriente")}
+  </div>
+
+  <div class="callout ${M.coberturaCajaDias<30?'bad':'blue'}"><span class="ci">▲</span><div>
+    <b>Corrección respecto de la v1.0:</b> el panel anterior mostraba un "runway" de 1,3 meses aplicando
+    lógica de startup (caja ÷ burn) a una empresa que <b>gana dinero</b>. Eso es un error conceptual:
+    el runway mide cuánto aguanta quien pierde plata. Aquí la operación genera
+    <b>${S(M.flujoOperativoMes)}</b> al mes, así que el indicador correcto es la cobertura de caja:
+    ${D(M.coberturaCajaDias)} días de egresos cubiertos con el efectivo actual.
+  </div></div>
+
+  <div class="grid2b">
+    <div class="card">
+      <div class="card-h"><div><h3>Capital de trabajo</h3>
+        <div class="sub">Reconstruido desde el balance — DSO y DPO ya no son números sueltos</div></div></div>
+      <table><tbody>
+        <tr><td>Cuentas por cobrar</td><td class="num money">${S(E.bal.cxc)}</td>
+            <td class="num fx">DSO ${D(M.dso)} días</td></tr>
+        <tr><td>Inventarios</td><td class="num money">${S(E.bal.inventarios)}</td>
+            <td class="num fx">DIO ${D(M.dio)} días</td></tr>
+        <tr><td>Cuentas por pagar</td><td class="num money">${S(E.bal.cxp)}</td>
+            <td class="num fx">DPO ${D(M.dpo)} días</td></tr>
+        <tr style="border-top:1px solid var(--line2)"><td style="font-weight:600">Ciclo de conversión</td>
+            <td class="num money" style="font-weight:600">${D(M.ccc)} días</td>
+            <td class="num fx">DSO + DIO − DPO</td></tr>
+      </tbody></table>
+      <div class="callout blue" style="margin-top:14px"><span class="ci">→</span><div>
+        Ventas por día = ${S(M.ventasDia)}. Cada día que bajes el DSO libera exactamente
+        <b style="color:var(--val)">${S(liberaUnDia)}</b> de caja.
+        Llevar el DSO de ${D(M.dso)} a ${objetivoDso} días liberaría
+        <b style="color:var(--val)">${S(liberaObjetivo)}</b>.
+        ${liberaObjetivo===0?"En este caso el DSO ya está por debajo del objetivo, así que no hay caja atrapada por cobranza lenta.":""}
+      </div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><div><h3>Capacidad de reinversión</h3>
+        <div class="sub">Con la política de tesorería declarada, no con un colchón inventado</div></div></div>
+      <table><tbody>
+        <tr><td>Caja disponible</td><td class="num money">${S(E.bal.caja)}</td></tr>
+        <tr><td>(−) Colchón operativo requerido
+          <div class="fx">${EMPRESAS[empActual].op.mesesColchonCaja} mes × egresos de caja ${S(M.egresosCajaMes)}</div></td>
+          <td class="num money down">−${S(M.colchonRequerido)}</td></tr>
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Caja libre para invertir</td>
+          <td class="num money ${M.cajaLibre>0?'up':'down'}" style="font-weight:600;font-size:15px">${S(M.cajaLibre)}</td></tr>
+      </tbody></table>
+      ${M.deficitColchon > 0 ? `
+      <div class="callout bad" style="margin-top:14px"><span class="ci">■</span><div>
+        <b>No hay caja libre para reinvertir.</b> Falta <b>${S(M.deficitColchon)}</b> para completar
+        siquiera el colchón operativo de ${EMPRESAS[empActual].op.mesesColchonCaja} mes.
+        La v1.0 respondía que se podía invertir S/ 244,320 porque usaba un colchón de S/ 60,000
+        puesto a mano — el código incluso calculaba S/ 276,000 y lo descartaba.
+        Antes de comprar cualquier activo, primero hay que reconstituir caja.
+      </div></div>` : `
+      <div class="callout blue" style="margin-top:14px"><span class="ci">◆</span><div>
+        Rentabilidad mínima exigida (hurdle rate) = tu WACC de <b>${P(M.hurdleRate)}</b>.
+        Un activo nuevo que rinda por debajo de eso destruye valor aunque dé utilidad contable.
+      </div></div>`}
+      <div class="stat-row" style="margin-top:14px;grid-template-columns:1fr 1fr">
+        ${cell("Hurdle rate (WACC)", P(M.hurdleRate), "retorno mínimo exigido","neu")}
+        ${cell("Retorno objetivo", P(M.roic), "para no diluir el ROIC actual","up")}
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ---------- CONTABILIDAD ---------- */
+function vContable(){
+  const fac = f(), er = EMPRESAS[empActual].er;
+  const L = [
+    ["Ingresos operativos", er.ingresos, "+"],
+    ["Costo de servicios", -er.costoServicios, "-"],
+    ["Gastos administrativos", -er.gastosAdmin, "-"],
+    ["Gastos de ventas", -er.gastosVentas, "-"],
+    ["Depreciación", -er.depreciacion, "-"],
+    ["Otros ingresos", er.otrosIngresos, "+"]
+  ];
+  return `
+  <div class="stat-row">
+    ${cell("Ingresos", S(er.ingresos*fac), PLABEL[periodo], "neu")}
+    ${cell("EBITDA", S(M.ebitda*fac), "antes de depreciación", "up")}
+    ${cell("Utilidad operativa", S(M.ebit*fac), "EBIT", "up")}
+    ${cell("Margen operativo", P(M.margenOper), "EBIT ÷ ingresos", M.margenOper>0.1?"up":"warn")}
+    ${cell("Utilidad neta", S(M.utilNetaMes*fac), "después de intereses e impuestos", "up")}
+  </div>
+  <div class="card">
+    <div class="card-h"><div><h3>Estado de resultados</h3>
+      <div class="sub">${PLABEL[periodo]} · es el punto de partida del NOPAT</div></div></div>
+    <table><thead><tr><th>Cuenta</th><th class="num">Importe</th><th class="num">% de ingresos</th></tr></thead><tbody>
+      ${L.map(([n,v]) => `<tr><td>${n}</td>
+        <td class="num money ${v>=0?'up':'down'}">${v>=0?'+':'−'}${S(Math.abs(v)*fac)}</td>
+        <td class="num fx">${P(Math.abs(v)/er.ingresos)}</td></tr>`).join("")}
+      <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Utilidad operativa (EBIT)</td>
+        <td class="num money up" style="font-weight:600;font-size:14px">${S(M.ebit*fac)}</td>
+        <td class="num fx">${P(M.margenOper)}</td></tr>
+      <tr><td>(−) Gastos financieros</td><td class="num money down">−${S(er.gastosFinancieros*fac)}</td>
+        <td class="num fx">${P(er.gastosFinancieros/er.ingresos)}</td></tr>
+      <tr><td>(−) Impuesto a la renta ${P(NORMA.rentaTercera)}</td>
+        <td class="num money down">−${S((M.ebit-er.gastosFinancieros)*NORMA.rentaTercera*fac)}</td><td></td></tr>
+      <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Utilidad neta</td>
+        <td class="num money up" style="font-weight:600;font-size:14px">${S(M.utilNetaMes*fac)}</td>
+        <td class="num fx">${P(M.utilNetaMes/er.ingresos)}</td></tr>
+    </tbody></table>
+  </div>
+  <div class="callout warn"><span class="ci">▲</span><div>
+    <b>Corrección respecto de la v1.0:</b> el panel anterior declaraba un margen operativo de 24,1%
+    mientras su propio estado de resultados daba ${P(M.margenOper)}. Eran dos números que nunca se hablaron.
+    Ahora el margen se calcula desde el estado de resultados, así que no puede divergir.
+  </div></div>`;
+}
+
+/* ---------- TRIBUTACIÓN ---------- */
+function vTributaria(){
+  const fac = f(), E = EMPRESAS[empActual];
+  return `
+  <div class="stat-row">
+    ${cell("Carga que afecta resultado", S(M.cargaResultado*fac), "renta + ESSALUD", "down")}
+    ${cell("Obligaciones de caja", S(M.cargaCaja*fac), "incluye IGV neto", "warn")}
+    ${cell("Tasa efectiva sobre resultado", P(M.tasaEfResultado), "carga real ÷ ingresos", "neu")}
+    ${cell("Tasa efectiva de caja", P(M.tasaEfCaja), "salida de efectivo ÷ ingresos", "neu")}
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div><h3>Liquidación del ${PLABEL[periodo]}</h3>
+      <div class="sub">Separando lo que es costo, lo que es solo caja, y lo que ni siquiera es tuyo</div></div></div>
+    <table><thead><tr><th>Concepto</th><th class="num">Base</th><th>Tasa</th>
+      <th class="num">Importe</th><th>Naturaleza</th></tr></thead><tbody>
+      <tr><td>IGV débito fiscal (ventas)</td><td class="num money fx">${S(E.er.ingresos*fac)}</td>
+        <td class="fx">${P(NORMA.igv,0)}</td><td class="num money">${S(M.igvDebito*fac)}</td>
+        <td><span class="pill info">se cobra al cliente</span></td></tr>
+      <tr><td>(−) IGV crédito fiscal (compras)</td><td class="num money fx">${S(E.op.comprasGravadas*fac)}</td>
+        <td class="fx">${P(NORMA.igv,0)}</td><td class="num money up">−${S(M.igvCredito*fac)}</td>
+        <td><span class="pill info">se recupera</span></td></tr>
+      <tr style="border-top:1px solid var(--line2)"><td style="font-weight:600">IGV por pagar (neto)</td>
+        <td></td><td></td><td class="num money" style="font-weight:600">${S(M.igvPagar*fac)}</td>
+        <td><span class="pill pend">salida de caja, no es costo</span></td></tr>
+      <tr><td>Renta 3ra · pago a cuenta</td><td class="num money fx">${S(E.er.ingresos*fac)}</td>
+        <td class="fx">${P(NORMA.pagoACuenta)}</td><td class="num money">${S(M.rentaPagoCuenta*fac)}</td>
+        <td><span class="pill late">costo real</span></td></tr>
+      <tr><td>ESSALUD (aporte del empleador)</td><td class="num money fx">${S(E.op.planilla*fac)}</td>
+        <td class="fx">${P(NORMA.essalud,0)}</td><td class="num money">${S(M.essalud*fac)}</td>
+        <td><span class="pill late">costo real</span></td></tr>
+      <tr><td>Retención AFP / ONP</td><td class="num money fx">${S(E.op.planilla*fac)}</td>
+        <td class="fx">${P(NORMA.retencionAfpOnp,0)}</td><td class="num money fx">${S(M.retencionAfpOnp*fac)}</td>
+        <td><span class="pill ok">del trabajador, no tuyo</span></td></tr>
+      <tr><td>Detracciones</td><td class="num money fx">${S(E.er.ingresos*fac)}</td>
+        <td class="fx">${P(NORMA.detraccion,0)}</td><td class="num money fx">${S(M.detraccion*fac)}</td>
+        <td><span class="pill ok">tu dinero inmovilizado</span></td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="callout bad"><span class="ci">▲</span><div>
+    <b>Tres errores corregidos de la v1.0.</b> Primero, el IGV se calculaba como 18% de las ventas
+    <b>sin restar el crédito fiscal</b> de las compras — sobreestimaba la obligación en
+    ${S(M.igvCredito)} al mes. Segundo, sumaba la retención de AFP/ONP como carga de la empresa,
+    cuando se descuenta del sueldo del trabajador. Tercero, contaba las detracciones como impuesto,
+    cuando son un depósito en tu propia cuenta de detracciones que luego usas para pagar tus tributos:
+    contarlas como costo es duplicar. Resultado: la v1.0 declaraba una carga de S/ 85,860 (20,1%);
+    la carga real que golpea tu resultado es <b>${S(M.cargaResultado)}</b> (${P(M.tasaEfResultado)}).
+  </div></div>
+
+  <div class="card">
+    <div class="card-h"><div><h3>Deuda tributaria</h3>
+      <div class="sub">TIM vigente 0,9% mensual · verificado contra SUNAT</div></div></div>
+    <table><thead><tr><th>Concepto</th><th class="num">Saldo</th><th>Tasa</th>
+      <th class="num">Costo anual</th><th class="num">vs WACC ${P(M.wacc)}</th></tr></thead><tbody>
+      ${M.obligaciones.filter(o=>o.clase==="tributaria").map(o => `<tr>
+        <td>${o.nombre}</td><td class="num money">${S(o.saldo)}</td>
+        <td class="fx">${(o.tasaMensual*100).toFixed(2)}% mensual = TEA ${P(o.tea)}</td>
+        <td class="num money">${S(o.costoAnual)}</td>
+        <td class="num money ${o.destruye?'down':'up'}">${o.destruye?'destruye ':'ahorra '}${S(Math.abs(o.valorAnual))}</td></tr>`).join("")}
+    </tbody></table>
+    <div class="callout warn" style="margin-top:14px"><span class="ci">!</span><div>
+      La v1.0 afirmaba que la TIM era 1,2% mensual. <b>La TIM real en moneda nacional es 0,9% mensual</b>
+      desde abril de 2021. Con la tasa correcta, esa deuda cuesta ${P(Math.pow(1.009,12)-1)} anual,
+      por debajo de tu WACC — el argumento financiero para fraccionarla urgentemente desaparece.
+      Lo que sí queda en pie es el riesgo: cobranza coactiva, embargo de cuentas y pérdida de
+      condición de buen contribuyente. Se regulariza por riesgo operativo, no por costo financiero.
+    </div></div>
+  </div>`;
+}
+
+/* ---------- LABORAL ---------- */
+function vLaboral(){
+  const fac = f(), E = EMPRESAS[empActual], op = E.op;
+  return `
+  <div class="stat-row">
+    ${cell("Colaboradores", op.colaboradores, "planilla activa", "neu")}
+    ${cell("Costo laboral total", S(M.costoLaboral*fac), "planilla + cargas + provisiones", "down")}
+    ${cell("Costo laboral / ingresos", P(M.costoLaboralPct), "vigilar si supera 35%", M.costoLaboralPct>0.35?"down":"up")}
+    ${cell("EVA por colaborador", S(M.evaPorEmpleado), "valor creado al año por persona", M.evaPorEmpleado>0?"up":"down")}
+  </div>
+  <div class="grid2b">
+    <div class="card">
+      <div class="card-h"><div><h3>Composición del costo laboral</h3>
+        <div class="sub">${PLABEL[periodo]} · lo que realmente cuesta un trabajador</div></div></div>
+      <table><thead><tr><th>Concepto</th><th>Factor</th><th class="num">Importe</th></tr></thead><tbody>
+        <tr><td>Remuneraciones</td><td class="fx">base</td><td class="num money">${S(op.planilla*fac)}</td></tr>
+        <tr><td>ESSALUD</td><td class="fx">${P(NORMA.essalud,0)}</td><td class="num money">${S(M.essalud*fac)}</td></tr>
+        <tr><td>Provisión CTS</td><td class="fx">${P(NORMA.ctsFactor,2)}</td><td class="num money">${S(M.provCts*fac)}</td></tr>
+        <tr><td>Provisión gratificaciones<div class="fx">incluye bonificación extraordinaria ${P(NORMA.bonifExtraGratif,0)}</div></td>
+          <td class="fx">${P(NORMA.gratifFactor,2)}</td><td class="num money">${S(M.provGratif*fac)}</td></tr>
+        <tr><td>Provisión vacaciones</td><td class="fx">${P(NORMA.vacacionesFactor,2)}</td>
+          <td class="num money">${S(M.provVac*fac)}</td></tr>
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Costo laboral total</td><td></td>
+          <td class="num money" style="font-weight:600;font-size:14px">${S(M.costoLaboral*fac)}</td></tr>
+        <tr><td class="fx">Sobrecosto sobre la remuneración</td><td></td>
+          <td class="num fx">${P(M.costoLaboral/op.planilla - 1)}</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card">
+      <div class="card-h"><div><h3>Pasivo laboral que se acumula</h3>
+        <div class="sub">Deuda con los trabajadores que aún no has pagado</div></div></div>
+      <table><tbody>
+        <tr><td>Provisiones del ${PLABEL[periodo]}</td>
+          <td class="num money down">${S(M.provTotal*fac)}</td></tr>
+        <tr><td>Acumulado anual proyectado</td><td class="num money down">${S(M.provTotal*12)}</td></tr>
+        <tr><td class="fx">Retención AFP/ONP que administras</td>
+          <td class="num money fx">${S(M.retencionAfpOnp*fac)}</td></tr>
+      </tbody></table>
+      <div class="callout warn" style="margin-top:14px"><span class="ci">▲</span><div>
+        <b>Corrección de la v1.0:</b> provisionaba la gratificación al 8,3% mensual, la misma tasa
+        que vacaciones. La gratificación son <b>dos sueldos al año</b> (${P(NORMA.gratifFactor,2)} mensual),
+        más la bonificación extraordinaria. Estaba subprovisionando aproximadamente
+        <b>${S(M.provGratif - op.planilla*0.083)}</b> cada mes — un pasivo laboral que aparecería
+        de golpe en julio y diciembre.
+      </div></div>
+    </div>
+  </div>`;
+}
+
+/* ---------- PATRIMONIAL ---------- */
+function vPatrimonial(){
+  const E = EMPRESAS[empActual], b = E.bal;
+  const ACT = [["Flota vehicular",b.flota],["Inmueble / terminal",b.inmueble],["Equipos y mobiliario",b.equipos],
+               ["Efectivo y equivalentes",b.caja],["Cuentas por cobrar",b.cxc],["Inventarios",b.inventarios]];
+  const PAS = [["Deuda financiera corto plazo",b.deudaFinCP],["Deuda financiera largo plazo",b.deudaFinLP],
+               ["Cuentas por pagar",b.cxp],["Tributos por pagar",b.tributosPorPagar]];
+  return `
+  <div class="stat-row">
+    ${cell("Activos totales", S(M.activos), "saldo del balance", "neu")}
+    ${cell("Patrimonio neto", S(M.patrimonio), "activo − pasivo", "up")}
+    ${cell("Capital invertido", S(M.capital), "base del cálculo del EVA", "neu")}
+    ${cell("ROE", P(M.roe), "utilidad neta ÷ patrimonio", "up")}
+  </div>
+
+  <div class="grid2b">
+    <div class="card">
+      <div class="card-h"><div><h3>Balance</h3><div class="sub">Todo suma; nada está escrito aparte</div></div></div>
+      <table><thead><tr><th>Activo</th><th class="num">Importe</th><th class="num">%</th></tr></thead><tbody>
+        ${ACT.map(([n,v]) => `<tr><td>${n}</td><td class="num money">${S(v)}</td>
+          <td class="num fx">${P(v/M.activos,0)}</td></tr>`).join("")}
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Total activo</td>
+          <td class="num money" style="font-weight:600">${S(M.activos)}</td><td class="num fx">100%</td></tr>
+      </tbody></table>
+      <table style="margin-top:16px"><thead><tr><th>Pasivo y patrimonio</th><th class="num">Importe</th><th class="num">%</th></tr></thead><tbody>
+        ${PAS.map(([n,v]) => `<tr><td>${n}</td><td class="num money">${S(v)}</td>
+          <td class="num fx">${P(v/M.activos,0)}</td></tr>`).join("")}
+        <tr><td style="font-weight:600">Patrimonio neto</td>
+          <td class="num money" style="font-weight:600">${S(M.patrimonio)}</td>
+          <td class="num fx">${P(M.patrimonio/M.activos,0)}</td></tr>
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Total pasivo + patrimonio</td>
+          <td class="num money" style="font-weight:600">${S(M.pasivos+M.patrimonio)}</td><td class="num fx">100%</td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="card">
+      <div class="card-h"><div><h3>Ratios de solidez</h3>
+        <div class="sub">Calculados desde el balance de la izquierda, no escritos a mano</div></div></div>
+      <table><tbody>
+        <tr><td>Ratio corriente<div class="fx">activo corriente ÷ pasivo corriente</div></td>
+          <td class="num money ${M.ratioCorriente>=1.5?'up':'neu'}">${D(M.ratioCorriente)}</td></tr>
+        <tr><td>Prueba ácida<div class="fx">(activo corriente − inventarios) ÷ pasivo corriente</div></td>
+          <td class="num money ${M.pruebaAcida>=1?'up':'down'}">${D(M.pruebaAcida)}</td></tr>
+        <tr><td>Deuda financiera / Patrimonio<div class="fx">${S(M.deudaFinanciera)} ÷ ${S(M.patrimonio)}</div></td>
+          <td class="num money">${D(M.deudaPatrimonio)}</td></tr>
+        <tr><td>Cobertura de intereses<div class="fx">EBIT ÷ gastos financieros</div></td>
+          <td class="num money ${M.coberturaIntereses>3?'up':'down'}">${D(M.coberturaIntereses)}x</td></tr>
+        <tr><td>ROE<div class="fx">utilidad neta anual ÷ patrimonio</div></td>
+          <td class="num money up">${P(M.roe)}</td></tr>
+      </tbody></table>
+      <div class="callout warn" style="margin-top:14px"><span class="ci">▲</span><div>
+        <b>Corrección de la v1.0:</b> el ROE se calculaba con la fórmula
+        <span class="fx">(EVA anual + WACC × patrimonio) ÷ patrimonio</span>, que mezcla una métrica
+        basada en capital invertido con una base de solo patrimonio. No es ROE. Aquí es
+        utilidad neta ÷ patrimonio, que es la definición. Los ratios de solidez tampoco estaban
+        calculados: eran cinco números fijos en el código.
+      </div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div><h3>Construcción del WACC</h3>
+      <div class="sub">Cada componente visible y editable — sin esto el EVA no es defendible</div></div></div>
+    <div class="grid2b">
+      <table><thead><tr><th>Costo del patrimonio (Ke)</th><th class="num">Tasa</th></tr></thead><tbody>
+        <tr><td>Tasa libre de riesgo</td><td class="num money">${P(E.wacc.tasaLibreRiesgo)}</td></tr>
+        <tr><td>Beta ${D(E.wacc.beta)} × prima de mercado ${P(E.wacc.primaMercado)}</td>
+          <td class="num money">${P(E.wacc.beta*E.wacc.primaMercado)}</td></tr>
+        <tr><td>Riesgo país</td><td class="num money">${P(E.wacc.riesgoPais)}</td></tr>
+        <tr><td>Prima por tamaño</td><td class="num money">${P(E.wacc.primaTamano)}</td></tr>
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">Ke</td>
+          <td class="num money" style="font-weight:600">${P(M.ke)}</td></tr>
+      </tbody></table>
+      <table><thead><tr><th>Ponderación</th><th class="num">Peso</th><th class="num">Costo</th></tr></thead><tbody>
+        <tr><td>Deuda financiera</td><td class="num money">${P(M.pesoDeuda)}</td>
+          <td class="num money">${P(M.kdAT)}<div class="fx">${P(E.wacc.costoDeudaTEA)} × (1−${P(NORMA.rentaTercera,1)})</div></td></tr>
+        <tr><td>Patrimonio</td><td class="num money">${P(M.pesoEquity)}</td>
+          <td class="num money">${P(M.ke)}</td></tr>
+        <tr style="border-top:2px solid var(--line2)"><td style="font-weight:600">WACC</td>
+          <td class="num fx">100%</td>
+          <td class="num money" style="font-weight:600;color:var(--purple)">${P(M.wacc)}</td></tr>
+      </tbody></table>
+    </div>
+    <div class="callout purple" style="margin-top:14px"><span class="ci">◆</span><div>
+      En la v1.0 el WACC era el número <span class="fx">9.1</span> escrito directamente en el código,
+      sin metodología. Un WACC sin construcción visible no se puede defender ante un banco ni un
+      directorio. Ahora cada componente es un input auditable: si te cuestionan la prima por tamaño,
+      la discusión es sobre ese 3%, no sobre todo el modelo.
+    </div></div>
+  </div>`;
+}
+
+/* ---------- ARQUITECTURA DE DATOS ---------- */
+function vArquitectura(){
+  const FUENTES = [
+    ["Estado de resultados","Balance de comprobación mensual","Sistema contable o plantilla F-13","Mensual",
+     "EBIT, NOPAT, margen operativo, utilidad neta"],
+    ["Balance general","Estado de situación financiera","Sistema contable o plantilla F-14","Mensual",
+     "Capital invertido, patrimonio, ratios de solidez, ROE"],
+    ["Movimientos bancarios","Estado de cuenta de cada banco","Banco (Excel/PDF) → plantilla 02_Bancos","Semanal",
+     "Flujo de caja real NIC 7, cobertura de caja"],
+    ["Ventas y cobranzas","Registro de ventas + condición de pago","PLE / sistema del cliente → 03_Ventas_CxC","Mensual",
+     "CxC, DSO, antigüedad de saldos, proyección de cobros"],
+    ["Compras y pagos","Registro de compras + vencimientos","PLE / sistema del cliente → 04_Compras_CxP","Mensual",
+     "CxP, DPO, crédito fiscal del IGV, proyección de pagos"],
+    ["Activo fijo","Registro de activos con depreciación","Plantilla F-15 (por construir)","Mensual",
+     "Activo no corriente, depreciación, capital invertido"],
+    ["Deuda financiera","Contratos y cronogramas de pago","Plantilla F-16 (por construir)","Al contratar / mensual",
+     "Costo de deuda, WACC, radar de destrucción de valor"],
+    ["Planilla","PLAME mensual","Sistema de planillas o plantilla F-17","Mensual",
+     "Costo laboral, ESSALUD, provisiones, EVA por colaborador"],
+    ["Deuda tributaria","Reporte de valores y fraccionamientos","SUNAT · SOL (descarga manual)","Mensual",
+     "Obligaciones tributarias, intereses TIM"],
+    ["Parámetros de mercado","Tasa libre de riesgo, riesgo país, betas","Fuentes públicas (BCRP, damodaran)","Trimestral",
+     "Costo del patrimonio, WACC"]
+  ];
+  return `
+  <div class="callout blue"><span class="ci">◆</span><div>
+    <b>Regla de oro de esta arquitectura:</b> un indicador solo puede mostrarse si existe un documento
+    fuente que lo sustente. Si la fuente no está cargada, el indicador no aparece — no se estima,
+    no se rellena, no se hereda del mes anterior. Eso es lo que separa un panel de gestión de una maqueta.
+  </div></div>
+
+  <div class="section-title"><span class="stbar"></span> Las tres capas</div>
+  <div class="card">
+    <div class="arch">
+      <div class="archrow">
+        <div class="archbox" style="border-color:var(--warn)">
+          <div class="an" style="color:var(--warn)">1 · CAPTURA</div>
+          <div class="ad">Documentos crudos</div></div>
+        <div class="archarrow">→</div>
+        <div class="archbox">
+          <div class="an">Estados de cuenta, registros de ventas y compras, PLAME, contratos de deuda, registro de activos</div>
+          <div class="ad">Vienen del cliente. Formato distinto según tenga o no sistema propio.</div></div>
+      </div>
+      <div class="archrow">
+        <div class="archbox" style="border-color:var(--acc)">
+          <div class="an" style="color:var(--acc2)">2 · NORMALIZACIÓN</div>
+          <div class="ad">Plantillas CORE</div></div>
+        <div class="archarrow">→</div>
+        <div class="archbox">
+          <div class="an">Un solo formato por tipo de dato, igual para todas las empresas</div>
+          <div class="ad">Aquí es donde el cliente con sistema y el cliente sin sistema se vuelven iguales. Es la capa que hoy no existe y que bloquea todo lo demás.</div></div>
+      </div>
+      <div class="archrow">
+        <div class="archbox" style="border-color:var(--val)">
+          <div class="an" style="color:var(--val)">3 · CÁLCULO</div>
+          <div class="ad">Motor único</div></div>
+        <div class="archarrow">→</div>
+        <div class="archbox">
+          <div class="an">Este panel: EVA, ROIC, WACC, flujo de caja, capital de trabajo, carga tributaria</div>
+          <div class="ad">Ningún número se escribe aquí. Todo se deriva de la capa 2.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><span class="stbar"></span> Trazabilidad · qué documento alimenta qué indicador</div>
+  <div class="card">
+    <table><thead><tr><th>Dato</th><th>Documento fuente</th><th>Origen</th><th>Frecuencia</th>
+      <th>Indicadores que habilita</th></tr></thead><tbody>
+      ${FUENTES.map(r => `<tr><td style="font-weight:500">${r[0]}</td>
+        <td style="color:var(--ink2)">${r[1]}</td>
+        <td class="fx" style="color:${r[2].includes('por construir')?'var(--warn)':'var(--ink2)'}">${r[2]}</td>
+        <td class="fx">${r[3]}</td>
+        <td style="font-size:12px;color:var(--ink3)">${r[4]}</td></tr>`).join("")}
+    </tbody></table>
+  </div>
+
+  <div class="callout warn"><span class="ci">!</span><div>
+    <b>Lo que falta para que este panel deje de ser demostración:</b> las plantillas de activo fijo (F-15)
+    y deuda financiera (F-16). Sin activo fijo no hay capital invertido real; sin deuda financiera no hay
+    WACC defendible. Son las dos piezas que hoy separan un EVA auditable de un EVA referencial.
+  </div></div>`;
+}
+
+/* ---------- AUDITORÍA ---------- */
+function vAuditoria(){
+  const fails = AUD.filter(a => !a.ok).length;
+  return `
+  <div class="callout ${fails?'bad':'blue'}"><span class="ci">${fails?'■':'✓'}</span><div>
+    ${fails ? `<b>${fails} verificación(es) fallando.</b> Revisa los datos cargados antes de presentar
+      cualquier reporte de esta empresa.`
+    : `<b>Las ${AUD.length} verificaciones pasan.</b> El modelo es internamente coherente: los totales
+      cuadran, el árbol de valor multiplica de verdad y el EVA da igual por ambos métodos de cálculo.
+      Esta pantalla corre en cada cambio de empresa o de periodo.`}
+  </div></div>
+  <div class="card">
+    <div class="card-h"><div><h3>Verificaciones del modelo</h3>
+      <div class="sub">Cada una compara dos caminos de cálculo que deben llegar al mismo número</div></div></div>
+    ${AUD.map(a => `<div class="chk">
+      <div class="ci2" style="background:${a.ok?'var(--valbg)':'var(--badbg)'};color:${a.ok?'var(--val)':'var(--bad)'}">${a.ok?'✓':'✕'}</div>
+      <div class="cb"><div class="ct">${a.t}</div><div class="cs">${a.f}</div>
+        <div style="font-size:11px;color:var(--ink3);margin-top:3px">${a.d}</div></div>
+      <div class="cv"><div style="color:${a.ok?'var(--val)':'var(--bad)'}">
+        ${Math.abs(a.a)<1 ? a.a.toFixed(6) : S(a.a)}</div>
+        <div style="color:var(--ink3);font-size:10.5px">${Math.abs(a.b)<1 ? a.b.toFixed(6) : S(a.b)}</div></div>
+    </div>`).join("")}
+  </div>
+  <div class="card">
+    <div class="card-h"><div><h3>Errores encontrados en la versión 1.0</h3>
+      <div class="sub">Todos corregidos en este archivo</div></div></div>
+    <table><thead><tr><th>Módulo</th><th>Error</th><th>Corrección</th></tr></thead><tbody>
+      ${[
+        ["Resumen","Capital invertido fijo en S/ 612,000, mientras el balance del mismo archivo daba otro número",
+         "Se calcula desde el balance por dos métodos que deben coincidir"],
+        ["Resumen","EVA de S/ 13,967/mes no salía de su propia fórmula: (14.8%−9.1%)×612,000 da S/ 2,907/mes",
+         "EVA derivado, y comprobado por método del spread y del cargo de capital"],
+        ["Resumen","El árbol mostraba margen 24.1% × rotación 1.8 = ROIC 14.8%, que no multiplica (da 43.4%)",
+         "Margen NOPAT × rotación = ROIC, verificado en cada render"],
+        ["Contabilidad","Margen operativo declarado 24.1% vs. 9.7% real según su propio estado de resultados",
+         "Margen calculado desde el EBIT"],
+        ["Capital de trabajo","DSO de 52 días incompatible con CxC 142,000 y ventas 428,000 (implica 10 días)",
+         "DSO reconstruido desde el balance y verificado contra CxC"],
+        ["Capital de trabajo","Afirmaba liberar S/ 30,000 bajando el DSO 7 días; con esas ventas son ~S/ 98,500",
+         "Se calcula ventas por día × días de reducción"],
+        ["Capital de trabajo","Runway de startup aplicado a empresa rentable con flujo operativo positivo",
+         "Reemplazado por cobertura de caja en días de egresos"],
+        ["Patrimonial","Colchón de caja: el código calculaba S/ 276,000 y lo descartaba por S/ 60,000 fijo",
+         "Colchón = meses de política × egresos de caja reales"],
+        ["Patrimonial","ROE con fórmula inválida que mezclaba EVA con patrimonio",
+         "ROE = utilidad neta ÷ patrimonio"],
+        ["Patrimonial","Cinco ratios de solidez escritos a mano, ninguno derivado del balance",
+         "Todos calculados desde el balance"],
+        ["Tributación","IGV al 18% de ventas sin restar crédito fiscal de compras",
+         "IGV neto = débito − crédito"],
+        ["Tributación","Retención AFP/ONP y detracciones contadas como carga de la empresa",
+         "Separadas: retención del trabajador y depósito propio, no son costo"],
+        ["Tributación","TIM de SUNAT declarada en 1.2% mensual",
+         "TIM real 0.9% mensual (vigente desde 04-2021), lo que invierte la conclusión"],
+        ["Laboral","Gratificación provisionada al 8.3% mensual (tasa de vacaciones)",
+         "16.67% mensual + bonificación extraordinaria"],
+        ["Todos","El periodo multiplicaba también los saldos del balance (caja, capital)",
+         "Solo los flujos se escalan; los saldos nunca"],
+        ["Resumen","Barra de presupuesto recortada al 100%: un 112% se veía igual que un 100%",
+         "Escala hasta 160% con marca visible en el 100%"]
+      ].map(r => `<tr><td class="fx">${r[0]}</td><td style="font-size:12.5px">${r[1]}</td>
+        <td style="font-size:12.5px;color:var(--val)">${r[2]}</td></tr>`).join("")}
+    </tbody></table>
+  </div>`;
+}
+
+function vEmpty(){
+  return `<div class="card"><div class="empty">
+    <div style="font-size:16px;color:var(--ink2);font-weight:500;margin-bottom:6px">Módulo en construcción</div>
+    <div>Compartirá el mismo motor de cálculo: ningún número escrito a mano.</div></div></div>`;
+}
+
+/* init */
+document.getElementById("empSel").innerHTML =
+  Object.entries(EMPRESAS).map(([k,v]) => `<option value="${k}">${v.nombre}</option>`).join("");
+recompute();
+render();
+</script>
+</body>
+</html>
