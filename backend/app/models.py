@@ -57,8 +57,8 @@ class Usuario(Base):
     __tablename__ = "usuarios"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    clerk_user_id: Mapped[str] = mapped_column(String(255), unique=True, index=True)
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
-    password_hash: Mapped[str] = mapped_column(String(255))
     nombre: Mapped[str] = mapped_column(String(200), default="")
     rol: Mapped[Rol] = mapped_column(Enum(Rol), default=Rol.cliente)
 

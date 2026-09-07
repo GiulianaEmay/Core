@@ -5,9 +5,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     database_url: str = "sqlite:///./core.db"
-    jwt_secret: str = "dev-secret-change-me"
-    jwt_algorithm: str = "HS256"
-    jwt_expire_minutes: int = 60 * 12
+    clerk_secret_key: str = ""
+    clerk_issuer: str = ""
     allowed_origins: str = "http://localhost:3000"
 
     @property

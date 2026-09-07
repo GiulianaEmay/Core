@@ -9,7 +9,13 @@ router = APIRouter(prefix="/empresas", tags=["empresas"])
 
 
 @router.post("", response_model=schemas.EmpresaOut)
-def crear_empresa(payload: schemas.EmpresaCreate, db: Session = Depends(get_db)):
+def crear_empresa(
+    payload: schemas.EmpresaCreate,
+    db: Session = Depends(get_db),
+    current_user: models.Usuario = Depends(get_current_user),
+):
+    if current_user.rol != models.Rol.admin:
+        raise HTTPException(status_code=403, detail="Requiere rol admin")
     if db.query(models.Empresa).filter(models.Empresa.ruc == payload.ruc).first():
         raise HTTPException(status_code=400, detail="Ya existe una empresa con ese RUC")
     empresa = models.Empresa(**payload.model_dump())

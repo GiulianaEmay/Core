@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
-from app.routers import auth, empresas, usuarios
+from app.routers import empresas, periodos, usuarios
 
 app = FastAPI(title="Core · Value OS API", version="0.1.0")
 
@@ -14,9 +14,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(auth.router)
 app.include_router(empresas.router)
 app.include_router(usuarios.router)
+app.include_router(periodos.router)
 
 
 @app.get("/health")

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Show, UserButton } from "@clerk/nextjs";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
@@ -43,6 +45,26 @@ export default function Home() {
             </span>
           </div>
         </div>
+
+        <Show when="signed-out">
+          <Link
+            href="/sign-in"
+            className="inline-block rounded-lg bg-[#4C82F7] px-4 py-2 text-sm font-medium text-white"
+          >
+            Iniciar sesión →
+          </Link>
+        </Show>
+        <Show when="signed-in">
+          <div className="flex items-center gap-3">
+            <Link
+              href="/contabilidad"
+              className="inline-block rounded-lg bg-[#4C82F7] px-4 py-2 text-sm font-medium text-white"
+            >
+              Ir a Contabilidad →
+            </Link>
+            <UserButton />
+          </div>
+        </Show>
 
         <p className="text-xs text-[#5E6A8A]">
           El prototipo de referencia (diseño y motor de cálculo del EVA) está en{" "}
