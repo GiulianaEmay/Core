@@ -1,77 +1,36 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Show, UserButton } from "@clerk/nextjs";
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export default function Home() {
-  const [status, setStatus] = useState<"cargando" | "ok" | "error">("cargando");
-
-  useEffect(() => {
-    fetch(`${API_URL}/health`)
-      .then((res) => (res.ok ? setStatus("ok") : setStatus("error")))
-      .catch(() => setStatus("error"));
-  }, []);
-
   return (
-    <main className="min-h-screen bg-[#0A0E1A] text-[#EAF0FF] flex items-center justify-center p-8">
-      <div className="max-w-lg w-full space-y-6">
+    <main className="landing">
+      <section className="brand">
         <div>
-          <h1 className="text-2xl font-semibold">Core · Value OS</h1>
-          <p className="text-sm text-[#9AA7C7] mt-1">
-            Fase 0 — esqueleto: backend que responde, base que guarda, login que funciona.
+          <div className="logo" style={{ fontSize: 26 }}>CORE</div>
+          <div className="tag">Creación de Valor para Empresas</div>
+        </div>
+        <div>
+          <h1 style={{ fontFamily: "var(--disp)", fontSize: 48, lineHeight: 1.05, fontWeight: 700 }}>
+            Su empresa, <span style={{ color: "var(--cyan)" }}>en un solo tablero</span>
+          </h1>
+          <p className="lead" style={{ marginTop: 18 }}>
+            Indicadores, fugas de valor, la ruta de su plan, aprobaciones y documentos: todo lo que su equipo CORE
+            gestiona con usted, en un solo lugar.
           </p>
         </div>
-
-        <div className="rounded-xl border border-[#232D45] bg-[#141B2E] p-5">
-          <div className="text-xs uppercase tracking-wide text-[#5E6A8A]">Backend API</div>
-          <div className="mt-2 flex items-center gap-2">
-            <span
-              className={`h-2.5 w-2.5 rounded-full ${
-                status === "ok"
-                  ? "bg-[#2ED3A7]"
-                  : status === "error"
-                    ? "bg-[#F0637A]"
-                    : "bg-[#F5B54A]"
-              }`}
-            />
-            <span className="text-sm">
-              {status === "ok" && `Conectado a ${API_URL}`}
-              {status === "error" &&
-                `No se pudo conectar a ${API_URL} — ¿corriste "uvicorn app.main:app --reload" en backend/?`}
-              {status === "cargando" && "Verificando conexión…"}
-            </span>
-          </div>
+        <div className="tag">Finanzas · Operaciones · Legal</div>
+      </section>
+      <section className="formside">
+        <div className="lform">
+          <h2>Portal del cliente</h2>
+          <p className="muted">Ingrese con su correo o con su cuenta de Google.</p>
+          <Link className="btn" href="/sign-in">Iniciar sesión</Link>
+          <Link className="btn line" href="/sign-up">Crear cuenta</Link>
+          <p className="hint">
+            Si es la primera vez que ingresa, su líder de cuenta CORE vinculará su usuario a su empresa para que
+            pueda ver su información.
+          </p>
         </div>
-
-        <Show when="signed-out">
-          <Link
-            href="/sign-in"
-            className="inline-block rounded-lg bg-[#4C82F7] px-4 py-2 text-sm font-medium text-white"
-          >
-            Iniciar sesión →
-          </Link>
-        </Show>
-        <Show when="signed-in">
-          <div className="flex items-center gap-3">
-            <Link
-              href="/contabilidad"
-              className="inline-block rounded-lg bg-[#4C82F7] px-4 py-2 text-sm font-medium text-white"
-            >
-              Ir a Contabilidad →
-            </Link>
-            <UserButton />
-          </div>
-        </Show>
-
-        <p className="text-xs text-[#5E6A8A]">
-          El prototipo de referencia (diseño y motor de cálculo del EVA) está en{" "}
-          <code>docs/prototipo-v2.html</code>. El plan de arquitectura completo está en{" "}
-          <code>docs/arquitectura-plan.docx</code>.
-        </p>
-      </div>
+      </section>
     </main>
   );
 }

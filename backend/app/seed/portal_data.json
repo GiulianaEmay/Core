@@ -1,0 +1,5117 @@
+{
+ "clientes": {
+  "POL": {
+   "id": "POL",
+   "grupo": "Grupo Pollitos de Oro",
+   "plan": "Plan integral · Finanzas, Operaciones y Legal",
+   "lider": "Flor Mio · Finanzas",
+   "areas": [
+    "Finanzas",
+    "Operaciones",
+    "Legal"
+   ],
+   "empresas": [
+    {
+     "ruc": "POL1",
+     "nombre": "POLLITOS DE ORO S.A.C.",
+     "rucNum": "[RUC por registrar]"
+    },
+    {
+     "ruc": "POL2",
+     "nombre": "[Razón social por registrar]",
+     "rucNum": "[RUC por registrar]"
+    }
+   ],
+   "diagnostico": {
+    "Finanzas": {
+     "est": "Completo",
+     "av": 100,
+     "fecha": "jul 2026"
+    },
+    "Operaciones": {
+     "est": "Por iniciar",
+     "av": 0,
+     "fecha": ""
+    },
+    "Legal": {
+     "est": "En curso",
+     "av": 50,
+     "fecha": ""
+    }
+   },
+   "actividades": [
+    {
+     "uid": "A001",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F0",
+     "id": "0.1",
+     "act": "Diagnóstico integral del ciclo D-1/D-0",
+     "ent": "D-01 Informe línea base · D-02 VSM AS-IS",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A002",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F0",
+     "id": "0.2",
+     "act": "Línea base de merma (3 pesajes)",
+     "ent": "F-04 (base) · D-01",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A003",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F0",
+     "id": "0.3",
+     "act": "Inventario físico de javas",
+     "ent": "D-05 Inventario de javas",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A004",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F0",
+     "id": "0.4",
+     "act": "Mapa AS-IS y análisis de dependencia",
+     "ent": "D-06 Mapa AS-IS · D-03 Matriz DILO",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A005",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F0",
+     "id": "0.5",
+     "act": "Informe semáforo de riesgos",
+     "ent": "Informe semáforo (base de D-30)",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A006",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.1",
+     "act": "Visión, cultura y OKRs",
+     "ent": "Documento de visión · árbol de OKRs",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A007",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.3",
+     "act": "OKRs y estrategia de valor",
+     "ent": "Árbol de OKRs · BSC",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A008",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.4",
+     "act": "Arquitectura de procesos TO-BE",
+     "ent": "Mapa TO-BE · fichas de proceso",
+     "est": "Por aprobar",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A009",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.5",
+     "act": "Estructura organizacional TO-BE",
+     "ent": "D-07 Organigrama · SIG02",
+     "est": "Por aprobar",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A010",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.4",
+     "act": "RACI + MOF + límites de autonomía",
+     "ent": "D-08 RACI · D-09 MOF · D-10 Límites",
+     "est": "En curso",
+     "av": 25,
+     "nota": ""
+    },
+    {
+     "uid": "A011",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.5",
+     "act": "Homologación de granjas proveedoras",
+     "ent": "D-33 Scoring · contrato marco",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A012",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.8",
+     "act": "Reglas de decisión y límites de autonomía",
+     "ent": "Manual de límites de autonomía",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A013",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "id": "1.2",
+     "act": "Cimiento jurídico y estructura corporativa",
+     "ent": "Estructura societaria · poderes",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A014",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.1",
+     "act": "SOPs del ciclo operativo (compra→entrega)",
+     "ent": "D-12 a D-15 Flujogramas · SOPs",
+     "est": "En revisión",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A015",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.2",
+     "act": "Protocolo de ayuno pre-embarque",
+     "ent": "D-17 Protocolo de ayuno · F-01",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A016",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.3",
+     "act": "Estándar de densidad, encajado y manipuleo",
+     "ent": "D-16 Densidad · D-19 Manipuleo · D-22 JI Cards",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A017",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.4",
+     "act": "Protocolo de transporte de ave viva",
+     "ent": "D-18 Protocolo de transporte · F-03",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A018",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.5",
+     "act": "Control de pesaje 3 puntos y mortalidad",
+     "ent": "F-04 Pesaje · F-05 Mortalidad · F-06 Cargo",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A019",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.6",
+     "act": "Ciclo cerrado de javas (retorno/lavado/desinfección)",
+     "ent": "D-14 Flujograma C · D-21 Lavado · F-07",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A020",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.7",
+     "act": "Optimización del tiempo de parada (carga/descarga)",
+     "ent": "D-20 Estándar SMED · F-09 Checklist",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A021",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.8",
+     "act": "5S y gestión visual (patio y punto de carga)",
+     "ent": "Estándar 5S · tableros Kanban",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A022",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "id": "2.9",
+     "act": "Gestión de excepciones y escalamiento",
+     "ent": "D-15 Flujograma D · F-10 Incidencias",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A023",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.1",
+     "act": "KPIs por proceso y área",
+     "ent": "Catálogo de KPIs",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A024",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.1",
+     "act": "Tablero de 6 KPIs operativos",
+     "ent": "D-23 Tablero de control",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A025",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.2",
+     "act": "Costeo real por java y por ruta",
+     "ent": "D-26 Modelo de costeo ABC",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A026",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.3",
+     "act": "Rutina de dirección y reunión diaria",
+     "ent": "D-24 LSW · D-25 Reunión diaria",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A027",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.4",
+     "act": "Política comercial y de crédito",
+     "ent": "D-27 Política comercial y de crédito",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A028",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.5",
+     "act": "Cobranza y liquidación diaria",
+     "ent": "F-08 Liquidación de ruta",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A029",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.4",
+     "act": "Alineamiento Hoshin y despliegue de metas",
+     "ent": "X-Matrix Hoshin",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A030",
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "id": "3.6",
+     "act": "Mejora continua estructurada (A3)",
+     "ent": "D-28 Formato A3",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A031",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F0",
+     "id": "0.1",
+     "act": "Estructura económica e indicadores de valor",
+     "ent": "D-01 Informe línea base · D-02 EVA baseline",
+     "est": "Completado",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A032",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F0",
+     "id": "0.2",
+     "act": "Identificación de fugas económicas",
+     "ent": "D-03 Informe de fugas · F-01 Matriz de sobrecostos",
+     "est": "Completado",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A033",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F0",
+     "id": "0.3",
+     "act": "Matriz de riesgos y oportunidades",
+     "ent": "D-04 Matriz de riesgos · F-02 Mapa de calor",
+     "est": "Completado",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A034",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F0",
+     "id": "0.4",
+     "act": "Costo de oportunidad del capital",
+     "ent": "D-05 Informe costo de oportunidad · F-03 Cálculo WACC",
+     "est": "Completado",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A035",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F1",
+     "id": "1.1",
+     "act": "Auditoría de procesos financieros",
+     "ent": "D-06 Informe auditoría · D-07 Mapa de controles",
+     "est": "En curso",
+     "av": 85,
+     "nota": ""
+    },
+    {
+     "uid": "A036",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F1",
+     "id": "1.2",
+     "act": "Recepción y estructura documental",
+     "ent": "D-08 Flujograma recepción · F-04 Checklist documental",
+     "est": "En revisión",
+     "av": 50,
+     "nota": ""
+    },
+    {
+     "uid": "A037",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F1",
+     "id": "1.3",
+     "act": "Matriz de autorizaciones",
+     "ent": "D-09 Matriz de autorizaciones · D-10 Política de aprobación",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A038",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F1",
+     "id": "1.4",
+     "act": "Política de archivo y respaldo",
+     "ent": "D-11 Política de archivo · F-05 Cronograma conservación",
+     "est": "En revisión",
+     "av": 80,
+     "nota": ""
+    },
+    {
+     "uid": "A039",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F1",
+     "id": "1.5",
+     "act": "Cimiento jurídico y estructura corporativa",
+     "ent": "D-12 Estructura societaria · poderes",
+     "est": "Por aprobar",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A040",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F2",
+     "id": "2.1",
+     "act": "Contabilidad básica operativa",
+     "ent": "D-13 Reporte mensual · F-06 PLE · F-07 Conciliación",
+     "est": "En revisión",
+     "av": 70,
+     "nota": ""
+    },
+    {
+     "uid": "A041",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F2",
+     "id": "2.2",
+     "act": "Gestión y planificación tributaria",
+     "ent": "D-14 Plan tributario · D-15 Informe contingencias",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A042",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F2",
+     "id": "2.3",
+     "act": "Control de costos y auditoría interna",
+     "ent": "D-16 Informe auditoría · D-17 Modelo de costeo ABC",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A043",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F3",
+     "id": "3.1",
+     "act": "Planilla y liquidaciones básicas",
+     "ent": "D-20 Planilla · F-08 T-registro · F-09 CTS",
+     "est": "Completado",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A044",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F3",
+     "id": "3.2",
+     "act": "Contratos y regímenes laborales especiales",
+     "ent": "D-21 Contratos por modalidad · D-22 Informe régimen",
+     "est": "En revisión",
+     "av": 25,
+     "nota": ""
+    },
+    {
+     "uid": "A045",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F3",
+     "id": "3.3",
+     "act": "Planificación laboral estratégica",
+     "ent": "D-23 Manual de Funciones · F-10 Encuesta de clima",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A046",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F4",
+     "id": "4.1",
+     "act": "Control de tesorería y flujo de caja",
+     "ent": "D-26 Reporte de flujo · F-11 Control CxC/CxP",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A047",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F4",
+     "id": "4.2",
+     "act": "Análisis financiero y presupuesto",
+     "ent": "D-27 Presupuesto maestro · F-12 Análisis de variaciones",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A048",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F4",
+     "id": "4.3",
+     "act": "Planificación financiera estratégica",
+     "ent": "D-28 Modelo financiero · D-29 Pitch financiero",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A049",
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F4",
+     "id": "4.4",
+     "act": "Gestión basada en valor (VBM + EVA)",
+     "ent": "D-30 Dashboard EVA/WACC/ROIC · D-31 Política VBM",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A050",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F0",
+     "id": "0.1",
+     "act": "Auditoría legal y societaria inicial",
+     "ent": "D-01 Informe de diagnóstico legal · F-01 Matriz de riesgos legales",
+     "est": "En revisión",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A051",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F0",
+     "id": "0.2",
+     "act": "Inventario documental y brechas de homologación",
+     "ent": "D-02 Inventario documental · F-02 Checklist de brechas",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A052",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F1",
+     "id": "1.1",
+     "act": "Verificar y regularizar forma jurídica, estatutos y libros societarios",
+     "ent": "D-03 Estatuto actualizado · D-04 Libros societarios · F-03 Ficha registral",
+     "est": "En curso",
+     "av": 60,
+     "nota": ""
+    },
+    {
+     "uid": "A053",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F1",
+     "id": "1.2",
+     "act": "Verificación de poderes y vigencias SUNARP",
+     "ent": "D-05 Vigencia de poder · D-06 Capital social vigente",
+     "est": "Completado",
+     "av": 100,
+     "nota": ""
+    },
+    {
+     "uid": "A054",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F1",
+     "id": "1.3",
+     "act": "Inscripción o renovación en REMYPE",
+     "ent": "D-07 Constancia REMYPE",
+     "est": "En curso",
+     "av": 0,
+     "nota": "Pendiente de decisión del cliente"
+    },
+    {
+     "uid": "A055",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F1",
+     "id": "1.4",
+     "act": "Transformación Persona Natural → Persona Jurídica",
+     "ent": "D-08 Evaluación de separación patrimonial · D-09 Escritura de constitución",
+     "est": "Bloqueado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A056",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F2",
+     "id": "2.1",
+     "act": "Estatus de cumplimiento SUNAT y Protocolo de fiscalización SUNAT + CONTROL BOLETAS DE PAGO Y POLIZAS DE SEGURO",
+     "ent": "D-10 Protocolo de respuesta SUNAT · F-04 Archivo de sustento",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A057",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F2",
+     "id": "2.2",
+     "act": "Auditoría laboral preventiva (SUNAFIL) + RIT + politica disciplinaria +  politica antidrogas y alcohol",
+     "ent": "D-11 RIT aprobado por MTPE · D-12 Matriz IPERC · D-13 Contratos laborales",
+     "est": "En curso",
+     "av": 80,
+     "nota": ""
+    },
+    {
+     "uid": "A058",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F2",
+     "id": "2.3",
+     "act": "Verificación de licencias y habilitaciones",
+     "ent": "D-14 Licencia municipal · D-15 Habilitaciones sectoriales",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A059",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F2",
+     "id": "2.4",
+     "act": "Política antisoborno y Compliance básico (código de ética, protección de datos personales, confidencialidad) + SST",
+     "ent": "D-16 Política antisoborno · D-17 Política LPDP · D-18 Canal de denuncias",
+     "est": "En revisión",
+     "av": 40,
+     "nota": ""
+    },
+    {
+     "uid": "A060",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F3",
+     "id": "3.1",
+     "act": "Inventario y auditoría de contratos clientes y proveedores vigentes",
+     "ent": "D-19 Inventario de contratos · F-05 Mapa de riesgo contractual",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A061",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F3",
+     "id": 3.2,
+     "act": "Conciliación extrajudicial y cobranza preventiva, cartera de recuperación",
+     "ent": "D-22 Protocolo de cobranza · D-23 Títulos valores (pagarés)",
+     "est": "Planificado",
+     "av": 0,
+     "nota": ""
+    },
+    {
+     "uid": "A062",
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F3",
+     "id": 3.3,
+     "act": "Saneamiento de bienes inmuebles y gestión documental",
+     "ent": "D-24 Inventario de inmuebles SUNARP · D-25 Inventario de vehículos",
+     "est": "En curso",
+     "av": 15,
+     "nota": ""
+    }
+   ],
+   "fases": [
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F0",
+     "nom": "Diagnóstico y Línea Base",
+     "paso": 1,
+     "contratada": true,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "Pendiente",
+     "crit": "Línea base medida con datos reales de campo y umbral de partida acordado",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F1",
+     "nom": "Gobierno y Estructura",
+     "paso": 2,
+     "contratada": true,
+     "alc": "Roadmap",
+     "av": 28,
+     "gate": "En preparación",
+     "crit": "Organigrama, responsabilidades y límites de autonomía firmados",
+     "ini": "2026-07-26",
+     "fin": "2026-08-02"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F2",
+     "nom": "Estabilización y Estandarización Operativa",
+     "paso": 2,
+     "contratada": true,
+     "alc": "Roadmap",
+     "av": 11,
+     "gate": "En preparación",
+     "crit": "Procedimientos aplicados y verificados en operación real",
+     "ini": "2026-08-02",
+     "fin": "2026-08-09"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F3",
+     "nom": "Control y Visibilidad",
+     "paso": 3,
+     "contratada": true,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "Pendiente",
+     "crit": "Tablero alimentado a diario y rutina de dirección funcionando",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F4",
+     "nom": "Optimización Operativa · Lean + Six Sigma",
+     "paso": 2,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Ahorros medidos y validados por Finanzas",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F5",
+     "nom": "Transformación Digital · Digital Lean 4.0",
+     "paso": 3,
+     "contratada": false,
+     "alc": "Recomendada",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Sistemas operando sin registro manual en los procesos núcleo",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F6",
+     "nom": "IA & Data Analytics",
+     "paso": 3,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Modelos predictivos en uso para decisiones de compra",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F7",
+     "nom": "Creación de Valor · VBM + EVA",
+     "paso": 5,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Valor económico por encima del umbral, verificado",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Operaciones",
+     "fase": "F8",
+     "nom": "Escalabilidad · ISO · Sostenibilidad",
+     "paso": 5,
+     "contratada": false,
+     "alc": "Recomendada",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Sistema auditado y transferido al equipo del cliente",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F0",
+     "nom": "Diagnóstico y Línea Base",
+     "paso": 1,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 100,
+     "gate": "Aprobado",
+     "crit": "Situación económica real medida y fugas cuantificadas en soles",
+     "ini": "2026-07-01",
+     "fin": "2026-07-05"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F1",
+     "nom": "Gobierno y Control Financiero",
+     "paso": 3,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 63,
+     "gate": "En aprobación cliente",
+     "crit": "Controles, autorizaciones y archivo documental operando",
+     "ini": "2026-07-20",
+     "fin": "2026-08-07"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F2",
+     "nom": "Contabilidad y Cumplimiento",
+     "paso": 3,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 23,
+     "gate": "En aprobación cliente",
+     "crit": "Contabilidad al día, sin observaciones y con reporte mensual entregado",
+     "ini": "2026-07-16",
+     "fin": "2026-10-14"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F3",
+     "nom": "Gestión Laboral y Capital Humano",
+     "paso": 4,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 42,
+     "gate": "En aprobación cliente",
+     "crit": "Planilla y contratos en regla, sin exposición ante fiscalización",
+     "ini": "2026-07-16",
+     "fin": "2026-10-14"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F4",
+     "nom": "Gestión Financiera",
+     "paso": 3,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 0,
+     "gate": "Pendiente",
+     "crit": "Flujo de caja proyectado y presupuesto en ejecución con control de desviaciones",
+     "ini": "2026-07-16",
+     "fin": "2026-10-14"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F5",
+     "nom": "Transformación Digital · Finanzas 4.0",
+     "paso": 3,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Reportes y alertas automatizados, con integración contable funcionando",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F6",
+     "nom": "IA & Data Analytics Financiero",
+     "paso": 3,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Modelos de proyección y scoring en uso para decisiones",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F7",
+     "nom": "Creación de Valor Patrimonial · VBM+EVA",
+     "paso": 5,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Patrimonio personal separado y estructura societaria protegida",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Finanzas",
+     "fase": "F8",
+     "nom": "Escalabilidad · Gobierno · Sostenibilidad",
+     "paso": 5,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Gobierno instalado y empresa preparada para inversión externa",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F0",
+     "nom": "Diagnóstico Legal y Línea Base",
+     "paso": 1,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 50,
+     "gate": "En preparación",
+     "crit": "Riesgos legales mapeados y brecha documental cuantificada",
+     "ini": "2026-07-01",
+     "fin": "2026-07-08"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F1",
+     "nom": "Gestión Societaria y Estructural",
+     "paso": 1,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 53,
+     "gate": "En preparación",
+     "crit": "Estructura societaria, poderes y régimen vigentes e inscritos",
+     "ini": "2026-07-17",
+     "fin": "2026-07-24"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F2",
+     "nom": "Regulación Especial y Cumplimiento Normativo",
+     "paso": 4,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 30,
+     "gate": "En preparación",
+     "crit": "Licencias, cumplimiento laboral y compliance básico en regla",
+     "ini": "2026-07-24",
+     "fin": "2026-08-08"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F3",
+     "nom": "Gestión Contractual y Recuperación Operativa",
+     "paso": 4,
+     "contratada": true,
+     "alc": "En alcance 2026",
+     "av": 5,
+     "gate": "En preparación",
+     "crit": "Contratos vigentes auditados y cartera con respaldo ejecutable",
+     "ini": "2026-08-08",
+     "fin": "2026-08-16"
+    },
+    {
+     "ruc": "POL1",
+     "area": "Legal",
+     "fase": "F4",
+     "nom": "Compliance, Auditoría Legal y Blindaje Patrimonial",
+     "paso": 4,
+     "contratada": false,
+     "alc": "Roadmap",
+     "av": 0,
+     "gate": "No programado",
+     "crit": "Auditoría legal 360° cerrada y estructura de blindaje operando",
+     "ini": null,
+     "fin": null
+    }
+   ],
+   "solicitudes": [
+    {
+     "ruc": "POL1",
+     "n": 1,
+     "fecha": "2026-07-28",
+     "sol": "RESTRUCTURACION SOCIETARIA Y BLINDAJE DE ACTIVOS",
+     "area": "Finanzas",
+     "tipo": "Incidencia",
+     "plazo": 30,
+     "est": "Atendida",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 2,
+     "fecha": "2026-07-26",
+     "sol": "REGULARIZAR CORREOS CORPORATIVOS + FIRMAS",
+     "area": "Legal",
+     "tipo": "Consulta operativa",
+     "plazo": 15,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 3,
+     "fecha": "2026-07-26",
+     "sol": "REORGANIZACION COSTO LABORAL",
+     "area": "Legal",
+     "tipo": "Consulta operativa",
+     "plazo": 15,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 4,
+     "fecha": "2026-07-24",
+     "sol": "REVISION TIRBUTARIA A 4TA EMPRESA \"POLLITO DE ORO\"",
+     "area": "Finanzas",
+     "tipo": "Consulta operativa",
+     "plazo": 30,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 5,
+     "fecha": "2026-07-30",
+     "sol": "IMPLEMENTACION DE SISTEMA DE ASISTENCIA PARA PERSONAL",
+     "area": "Operaciones",
+     "tipo": "Consulta operativa",
+     "plazo": 15,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 6,
+     "fecha": "2026-07-26",
+     "sol": "BASE DE DATOS DE CLIENTES Y PROVEEDORES",
+     "area": "Operaciones",
+     "tipo": "Incidencia",
+     "plazo": 30,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 7,
+     "fecha": "2026-07-26",
+     "sol": "CHECKLIST DE VEHICULOS Y MANTENIMIENTO",
+     "area": "Operaciones",
+     "tipo": "Incidencia",
+     "plazo": 30,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 8,
+     "fecha": "2026-08-04",
+     "sol": "FLUJOGRAMA COMERCIAL: Agregar funcion del analista comercial sobre falta de disponibilidad de producto.",
+     "area": "Operaciones",
+     "tipo": "Otro",
+     "plazo": 1,
+     "est": "Abierta",
+     "atendida": null
+    },
+    {
+     "ruc": "POL1",
+     "n": 9,
+     "fecha": "2026-08-04",
+     "sol": "REVISAR CAMBIO DE ESSALUD A SIS - TODO EL GRUPO",
+     "area": "Legal",
+     "tipo": "Consulta operativa",
+     "plazo": 30,
+     "est": "Abierta",
+     "atendida": null
+    }
+   ],
+   "checklist": [
+    {
+     "ruc": "POL1",
+     "cod": "E1-POL-01",
+     "doc": "Política Comercial y de Precios",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Gerencia / Dirección Comercial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E1-PRO-01",
+     "doc": "Procedimiento de Pronóstico de Demanda",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Comercial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E1-MAN-01",
+     "doc": "Manual de Segmentación y Relación con Clientes",
+     "tipo": "Manual",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Comercial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E2-POL-01",
+     "doc": "Política de Calidad (ISO 9001)",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Gerencia / Dirección Operativa",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E2-MAN-01",
+     "doc": "Manual de Homologación y Scoring de Granjas",
+     "tipo": "Manual",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Operativa",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E2-REG-01",
+     "doc": "Matriz de Riesgos Operacionales",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Operativa",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E2-PLA-01",
+     "doc": "Plan de Mejora Continua (Kaizen)",
+     "tipo": "Plan",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Operativa",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E3-PLA-01",
+     "doc": "Presupuesto y Plan Financiero",
+     "tipo": "Plan",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Gerencia / Contador externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E3-POL-01",
+     "doc": "Política de Asignación de Capital y Reservas",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Gerencia / Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E3-REG-01",
+     "doc": "Tablero de Control de Gestión y EVA",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "E3-REG-02",
+     "doc": "Pronóstico de Cierre (EAC)",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O1-PRO-01",
+     "doc": "Procedimiento de Sondeo e Inteligencia de Precio",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O1-F-01",
+     "doc": "Registro de Precios y Disponibilidad de Granjas",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O1-F-02",
+     "doc": "Cálculo de Precio Base de Oferta",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O2-SOP-01",
+     "doc": "SOP de Captación de Pedidos",
+     "tipo": "SOP",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Comercial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-01",
+     "doc": "Orden de compra / Programación diaria (F-01)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Comercial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O2-F-01",
+     "doc": "Ficha / Registro de Cliente",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Comercial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O3-SOP-01",
+     "doc": "SOP de Compra y Cierre con Granja",
+     "tipo": "SOP",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O3-CON-01",
+     "doc": "Contrato Marco de Suministro con Granjas",
+     "tipo": "Contrato",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-17",
+     "doc": "Protocolo de Ayuno Pre-Embarque (D-17)",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-02",
+     "doc": "Acta de Recepción en Granja (F-02)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-18",
+     "doc": "Protocolo de Transporte de Ave Viva (D-18)",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-16",
+     "doc": "Estándar de Densidad y Encajado (D-16)",
+     "tipo": "SOP",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-19",
+     "doc": "Manual de Manipuleo y Bienestar Animal (D-19)",
+     "tipo": "Manual",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-20",
+     "doc": "Estándar SMED de Carga y Descarga (D-20)",
+     "tipo": "SOP",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-21",
+     "doc": "Procedimiento de Lavado y Desinfección de Javas (D-21)",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-03",
+     "doc": "Guía de Carga y Ruta (F-03)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Conductor",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-04",
+     "doc": "Control de Pesaje 3 Puntos (F-04)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-05",
+     "doc": "Registro de Mortalidad y Decomiso (F-05)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-06",
+     "doc": "Cargo de Entrega y Conformidad (F-06)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Conductor",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-07",
+     "doc": "Control de Retorno de Javas (F-07)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Ayudante",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-09",
+     "doc": "Checklist Pre-operativo de Vehículo (F-09)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Conductor",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-10",
+     "doc": "Reporte de Incidencias (F-10)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Logística / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O5-SOP-01",
+     "doc": "SOP de Cobranza y Liquidación Diaria",
+     "tipo": "SOP",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O5-POL-01",
+     "doc": "Política de Crédito y Cobranzas",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Administración / Finanzas",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "F-08",
+     "doc": "Liquidación Diaria de Ruta (F-08)",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Formatos y registros",
+     "resp": "Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "O5-PRO-01",
+     "doc": "Procedimiento de Recuperación de Cartera",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-32",
+     "doc": "Plan de Mantenimiento Preventivo de Flota (D-32)",
+     "tipo": "Plan",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S1-F-01",
+     "doc": "Bitácora de Mantenimiento por Vehículo",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S2-REG-01",
+     "doc": "Reglamento Interno de Trabajo — RIT",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "RR.HH. / Administración",
+     "est": "En elaboración",
+     "fecha": "2026-08-04"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S2-POL-01",
+     "doc": "Política Disciplinaria",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "RR.HH. / Administración",
+     "est": "En revisión",
+     "fecha": "2026-08-04"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S2-POL-02",
+     "doc": "Política de Prevención de Hostigamiento Sexual",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "RR.HH. / Administración",
+     "est": "Por enviar",
+     "fecha": "2026-08-04"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S2-POL-03",
+     "doc": "Política de Asistencia y Puntualidad",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "RR.HH. / Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-09",
+     "doc": "MOF y Perfiles de Puesto (D-09)",
+     "tipo": "Manual",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "RR.HH. / Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S2-PLA-01",
+     "doc": "Plan Anual de Capacitación",
+     "tipo": "Plan",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "RR.HH. / Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-26",
+     "doc": "Modelo de Costeo ABC por Java y Ruta (D-26)",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Administración / Contador externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S3-PRO-01",
+     "doc": "Procedimiento de Cierre y Conciliación Diaria",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S3-REG-01",
+     "doc": "Estados Financieros y Reportes",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Contador externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S4-REG-01",
+     "doc": "Contratos (granjas, clientes, laborales)",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Gerencia / Asesor Legal externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S4-POL-01",
+     "doc": "Política de Uso de Activos",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Administración",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S4-REG-02",
+     "doc": "Poderes y Estructura Societaria",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Gerencia / Asesor Legal externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-30",
+     "doc": "Matriz de Riesgos Legal-Patrimonial (D-30)",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Gerencia / Asesor Legal externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-29",
+     "doc": "Plan de Cumplimiento Sanitario y Documentario (D-29)",
+     "tipo": "Plan",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "D-31",
+     "doc": "Manual de Bioseguridad (D-31)",
+     "tipo": "Manual",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Planner",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S5-F-01",
+     "doc": "Registro de Desinfección",
+     "tipo": "Formato",
+     "area": "Operaciones",
+     "sub": "Procesos y protocolos",
+     "resp": "Operaciones / Ayudante",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S6-POL-01",
+     "doc": "Política de Uso de Sistemas y Datos",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Administración / TI externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S6-PRO-01",
+     "doc": "Procedimiento de Respaldo y Seguridad de Datos",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Administración / TI externo",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S7-POL-01",
+     "doc": "Política de Seguridad y Salud en el Trabajo",
+     "tipo": "Política",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Administración / Asesor SST",
+     "est": "Por enviar",
+     "fecha": "2026-08-04"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S7-REG-01",
+     "doc": "IPERC — Matriz de Peligros y Riesgos",
+     "tipo": "Registro",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Operaciones / Asesor SST",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "S7-PLA-01",
+     "doc": "Plan Anual de SST",
+     "tipo": "Plan",
+     "area": "Operaciones",
+     "sub": "Soporte: personas, sistemas y SST",
+     "resp": "Administración / Asesor SST",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SGC-MAN-01",
+     "doc": "Manual de Calidad y Mapa de Procesos",
+     "tipo": "Manual",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Operativa (SGC)",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SGC-PRO-01",
+     "doc": "Procedimiento de Control de Documentos y Registros",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Operativa (SGC)",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SGC-PRO-02",
+     "doc": "Procedimiento de Auditoría Interna",
+     "tipo": "Procedimiento",
+     "area": "Operaciones",
+     "sub": "Gobierno, calidad y estrategia",
+     "resp": "Dirección Operativa (SGC)",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-POL-01",
+     "doc": "Política de Asignación de Capital y Reservas",
+     "tipo": "Política",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Gerencia / Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-01",
+     "doc": "Tablero de Control de Gestión y EVA (Dashboard EVA/WACC/ROIC)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-PLA-01",
+     "doc": "Presupuesto Maestro y Plan Financiero",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-POL-02",
+     "doc": "Política de Gestión Basada en Valor (VBM)",
+     "tipo": "Política",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-PLA-02",
+     "doc": "Modelo Financiero 3–5 años y Plan de Inversión de Capital",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-02",
+     "doc": "Informe de Línea Base Económica y EVA Baseline",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-03",
+     "doc": "Informe de Fugas Económicas y Ranking de Rentabilidad",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Completo",
+     "fecha": "2026-07-20"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-04",
+     "doc": "Matriz de Riesgos y Oportunidades Financieras",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Completo",
+     "fecha": "2026-07-20"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-05",
+     "doc": "Informe de Costo de Oportunidad y Cálculo WACC",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Completo",
+     "fecha": "2026-07-20"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-PRO-01",
+     "doc": "Procedimiento de Recepción y Estructura Documental",
+     "tipo": "Procedimiento",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "En elaboración",
+     "fecha": "2026-08-16"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-POL-01",
+     "doc": "Política de Archivo Documental y Respaldo",
+     "tipo": "Política",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": "2026-08-16"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-REG-01",
+     "doc": "Reporte Contable Mensual (libros PLE · conciliación)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "En revisión",
+     "fecha": "2026-08-15"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-F-01",
+     "doc": "Formato de Conciliación Bancaria",
+     "tipo": "Formato",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-PRO-02",
+     "doc": "Procedimiento de Cierre y Conciliación Mensual",
+     "tipo": "Procedimiento",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-REG-02",
+     "doc": "Modelo de Costeo ABC por Producto / Área",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-REG-03",
+     "doc": "Informe de Auditoría Interna Contable",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-REG-04",
+     "doc": "Estados Financieros NIIF y Reportes de Gestión",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CT-REG-05",
+     "doc": "Dashboard Contable con KPIs",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "resp": "Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TR-PLA-01",
+     "doc": "Plan Tributario Anual",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "resp": "Tributario / Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TR-REG-01",
+     "doc": "Informe de Contingencias Tributarias",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "resp": "Tributario / Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TR-PRO-01",
+     "doc": "Procedimiento de Cumplimiento y Cronograma SUNAT",
+     "tipo": "Procedimiento",
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "resp": "Tributario / Contabilidad",
+     "est": "En revisión",
+     "fecha": "2026-08-15"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TR-REG-02",
+     "doc": "Actas de Atención de Fiscalización",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "resp": "Tributario / Contabilidad",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-REG-01",
+     "doc": "Planilla Mensual y Boletas (PLAME)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "En revisión",
+     "fecha": "2026-08-04"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-F-01",
+     "doc": "Formato T-Registro y Control de CTS",
+     "tipo": "Formato",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "En revisión",
+     "fecha": "2026-08-04"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-REG-02",
+     "doc": "Contratos por Modalidad e Informe de Régimen",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "En revisión",
+     "fecha": "2026-08-16"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-MAN-01",
+     "doc": "Manual de Compensaciones y Bandas Salariales",
+     "tipo": "Manual",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "Por enviar",
+     "fecha": "2026-08-16"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-F-02",
+     "doc": "Encuesta de Clima y Evaluación por KPI",
+     "tipo": "Formato",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-REG-03",
+     "doc": "HR Analytics y Modelo EVA de Personas",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LB-PLA-01",
+     "doc": "Plan de Sucesión de Personal Clave",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "resp": "Laboral / RR.HH.",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-PRO-01",
+     "doc": "Procedimiento de Auditoría de Procesos Financieros (COSO)",
+     "tipo": "Procedimiento",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "En elaboración",
+     "fecha": "2026-08-16"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-06",
+     "doc": "Mapa de Controles Financieros",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-POL-03",
+     "doc": "Matriz de Autorizaciones y Niveles de Aprobación",
+     "tipo": "Política",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-07",
+     "doc": "Reporte de Flujo de Caja (semanal / mensual)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Tesorería",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-F-01",
+     "doc": "Formato de Control de CxC y CxP",
+     "tipo": "Formato",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Tesorería",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-PRO-02",
+     "doc": "Procedimiento de Conciliación Caja–Banco–Ventas",
+     "tipo": "Procedimiento",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Tesorería",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-F-02",
+     "doc": "Formato de Análisis de Variaciones Presupuestales",
+     "tipo": "Formato",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-08",
+     "doc": "Evaluación de Proyectos de Inversión (VPN·TIR·ROI)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "FIN-REG-09",
+     "doc": "Pitch Financiero para Inversores / Bancos",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIG-REG-01",
+     "doc": "Tablero de Control BI y Catálogo de KPIs / OKRs",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Digital y reportes",
+     "resp": "Dirección Financiera / BI",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIG-PRO-01",
+     "doc": "Procedimiento de Alertas y Escalamiento Financiero",
+     "tipo": "Procedimiento",
+     "area": "Finanzas",
+     "sub": "Digital y reportes",
+     "resp": "Dirección Financiera / BI",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIG-REG-02",
+     "doc": "Facturador Electrónico e Integración ERP–Contabilidad",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Digital y reportes",
+     "resp": "Contabilidad / TI",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIG-REG-03",
+     "doc": "Modelo de Forecast Financiero de Caja (ML)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Digital y reportes",
+     "resp": "Dirección Financiera / Data",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIG-REG-04",
+     "doc": "Modelo de Scoring de Proveedores y Clientes",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Digital y reportes",
+     "resp": "Dirección Financiera / Data",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIG-REG-05",
+     "doc": "Reportes Ejecutivos Automatizados (Process Mining)",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Digital y reportes",
+     "resp": "Dirección Financiera / BI",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-REG-01",
+     "doc": "Informe Patrimonial e Inventario de Activos",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Dirección Financiera / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-REG-02",
+     "doc": "Organigrama Societario y Estructura Holding",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Gerencia / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-CON-01",
+     "doc": "Pacto de Accionistas y Estatutos",
+     "tipo": "Contrato",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Gerencia / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-REG-03",
+     "doc": "Protocolo de Familia Empresaria",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Gerencia / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-PLA-01",
+     "doc": "Plan de Sucesión Empresarial y Traspaso",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Gerencia / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-REG-04",
+     "doc": "Portafolio Patrimonial y Valuación Empresarial",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Dirección Financiera / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PAT-PLA-02",
+     "doc": "Plan de Inversión Patrimonial (APV / fondos)",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Patrimonial",
+     "resp": "Dirección Financiera / Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "GOB-PLA-01",
+     "doc": "Presupuesto Base Cero (ZBB + VBM)",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Gobierno financiero",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "GOB-PRO-01",
+     "doc": "Plan de Auditoría Financiera y Mejora Continua",
+     "tipo": "Plan",
+     "area": "Finanzas",
+     "sub": "Gobierno financiero",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "GOB-REG-01",
+     "doc": "Reporte ESG y Marco de Gobierno Corporativo",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Gobierno financiero",
+     "resp": "Gerencia / Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "GOB-REG-02",
+     "doc": "Modelo de Valuación para M&A y Due Diligence",
+     "tipo": "Registro",
+     "area": "Finanzas",
+     "sub": "Gobierno financiero",
+     "resp": "Dirección Financiera",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-01",
+     "doc": "Escritura pública de constitución vigente",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-02",
+     "doc": "Ficha registral SUNARP vigente (≤3 meses, sin cargas)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "Completo",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-03",
+     "doc": "Estatuto social actualizado (objeto social ampliado)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "Por enviar",
+     "fecha": "2026-08-10"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-04",
+     "doc": "Cláusulas de quórum, salida de socios y representación",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-REG-01",
+     "doc": "Libros societarios legalizados (Actas, Matrícula)",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-05",
+     "doc": "Vigencia de poder del representante legal (≤3 meses)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "Completo",
+     "fecha": "2026-08-05"
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-06",
+     "doc": "Constancia de inscripción/renovación REMYPE",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Societario",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SOC-DOC-07",
+     "doc": "Evaluación de separación patrimonial empresa/persona",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Societario",
+     "resp": "Legal Patrimonial",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIAG-REG-01",
+     "doc": "Informe de diagnóstico legal integral",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Diagnóstico",
+     "resp": "Legal Societario",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIAG-F-01",
+     "doc": "Matriz de riesgos legales (probabilidad × impacto)",
+     "tipo": "Formato",
+     "area": "Legal",
+     "sub": "Diagnóstico",
+     "resp": "Legal Societario",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DIAG-F-02",
+     "doc": "Checklist de brechas de homologación (121 pts)",
+     "tipo": "Formato",
+     "area": "Legal",
+     "sub": "Diagnóstico",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TRIBL-DOC-01",
+     "doc": "Contratos con fecha cierta notarial (fehaciencia)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Tributario",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TRIBL-PRO-01",
+     "doc": "Protocolo de respuesta ante fiscalización SUNAT",
+     "tipo": "Protocolo",
+     "area": "Legal",
+     "sub": "Tributario",
+     "resp": "Legal Tributario",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "TRIBL-DOC-02",
+     "doc": "Guías de remisión con respaldo (SUNAT/SENASA)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Tributario",
+     "resp": "Legal Tributario",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-DOC-01",
+     "doc": "Contratos de trabajo por modalidad (con fecha cierta)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "En elaboración",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-DOC-02",
+     "doc": "Reglamento Interno de Trabajo (RIT) aprobado por MTPE",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "En elaboración",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-POL-01",
+     "doc": "Política de prevención de hostigamiento sexual + comité",
+     "tipo": "Política",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Completo",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-DOC-03",
+     "doc": "Cuadro de categorías y funciones (Ley N° 30709)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-DOC-04",
+     "doc": "Manual de Organización y Funciones (MOF)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-PRO-01",
+     "doc": "Protocolo de trabajo nocturno con sobretasa 35%",
+     "tipo": "Protocolo",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-REG-01",
+     "doc": "Registro de control de asistencia y horario nocturno",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-PRO-02",
+     "doc": "Control de prohibición de menores en turno nocturno",
+     "tipo": "Protocolo",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LABL-REG-02",
+     "doc": "Vacaciones programadas, registradas y pagadas",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Laboral",
+     "resp": "Legal Laboral",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LIC-DOC-01",
+     "doc": "Licencia municipal de funcionamiento (zonificación)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Licencias y permisos",
+     "resp": "Legal Licencias",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LIC-DOC-02",
+     "doc": "Autorización MTC transporte público de mercancías",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Licencias y permisos",
+     "resp": "Legal Licencias",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "LIC-DOC-03",
+     "doc": "Tarjeta de propiedad vehicular (SUNARP) por unidad",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Licencias y permisos",
+     "resp": "Legal Licencias",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SSTL-DOC-01",
+     "doc": "Matriz IPERC por puesto de trabajo",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Seguridad y salud",
+     "resp": "Legal SST",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SSTL-DOC-02",
+     "doc": "SCTR (estiba, conducción, planta) vigente",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Seguridad y salud",
+     "resp": "Legal SST",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "SSTL-DOC-03",
+     "doc": "Seguro de Vida Ley activo",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Seguridad y salud",
+     "resp": "Legal SST",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-REG-01",
+     "doc": "Inventario y auditoría de contratos vigentes",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-F-01",
+     "doc": "Mapa de riesgo contractual (semáforo)",
+     "tipo": "Formato",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-DOC-01",
+     "doc": "Contratos con clientes principales (mérito ejecutivo)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-DOC-02",
+     "doc": "Contratos con proveedores (cláusulas sanitarias SENASA)",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-DOC-03",
+     "doc": "Contrato de arrendamiento del local ante notario",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-DOC-04",
+     "doc": "Cláusulas anticorrupción en contratos con terceros",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-DOC-05",
+     "doc": "Títulos valores: pagarés, letras o fianzas",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-DOC-06",
+     "doc": "NDA y cláusulas de confidencialidad",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "CON-PRO-01",
+     "doc": "Protocolo de cobranza extrajudicial preventiva",
+     "tipo": "Protocolo",
+     "area": "Legal",
+     "sub": "Contractual",
+     "resp": "Legal Contractual",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PATL-REG-01",
+     "doc": "Inventario de inmuebles en SUNARP con título limpio",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Patrimonial",
+     "resp": "Legal Patrimonial",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PATL-REG-02",
+     "doc": "Inventario de vehículos a nombre de la empresa",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Patrimonial",
+     "resp": "Legal Patrimonial",
+     "est": "En revisión",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PATL-DOC-01",
+     "doc": "Estructura holding para múltiples negocios",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Patrimonial",
+     "resp": "Legal Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PATL-DOC-02",
+     "doc": "Organigrama societario y estructura holding",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Patrimonial",
+     "resp": "Legal Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PATL-DOC-03",
+     "doc": "Protocolo de familia empresaria",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Patrimonial",
+     "resp": "Legal Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "PATL-PLA-01",
+     "doc": "Plan de sucesión empresarial y separación patrimonial",
+     "tipo": "Plan",
+     "area": "Legal",
+     "sub": "Patrimonial",
+     "resp": "Legal Patrimonial",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-DOC-01",
+     "doc": "Código de ética / conducta aprobado y difundido",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Completo",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-POL-01",
+     "doc": "Política anticorrupción / antisoborno (ISO 37001)",
+     "tipo": "Política",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-DOC-02",
+     "doc": "Canal de denuncias anónimas para trabajadores",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-REG-01",
+     "doc": "Registro de capacitación ética y antisoborno (anual)",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-DOC-03",
+     "doc": "Designación formal de responsable de compliance",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-DOC-04",
+     "doc": "Sistema ISO 37301: políticas y objetivos documentados",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-REG-02",
+     "doc": "Informe de auditoría legal 360° (SGL CORE)",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-REG-03",
+     "doc": "Dashboard legal mensual (KLIs)",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "COMP-DOC-05",
+     "doc": "Expediente de homologación corporativa",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Compliance",
+     "resp": "Legal Compliance",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DATA-POL-01",
+     "doc": "Política de protección de datos personales (LPDP)",
+     "tipo": "Política",
+     "area": "Legal",
+     "sub": "Protección de datos",
+     "resp": "Legal Datos",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DATA-DOC-01",
+     "doc": "Registro de banco de datos ante Autoridad Nacional",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Protección de datos",
+     "resp": "Legal Datos",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DATA-DOC-02",
+     "doc": "Registro de marca comercial ante INDECOPI",
+     "tipo": "Documento",
+     "area": "Legal",
+     "sub": "Protección de datos",
+     "resp": "Legal PI",
+     "est": "Por enviar",
+     "fecha": null
+    },
+    {
+     "ruc": "POL1",
+     "cod": "DATA-REG-01",
+     "doc": "Inventario de activos intangibles",
+     "tipo": "Registro",
+     "area": "Legal",
+     "sub": "Protección de datos",
+     "resp": "Legal PI",
+     "est": "Por enviar",
+     "fecha": null
+    }
+   ],
+   "fugas": [
+    {
+     "ruc": "POL1",
+     "fuga": "Contratos con granjas y clientes sin formalizar ni cláusulas de penalidad",
+     "area": "Legal",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Mitigar con contrato marco y títulos valores",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Merma de peso sin medición ni causa asignada entre granja y entrega",
+     "area": "Operaciones",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Mitigar con control de pesaje de 3 puntos y protocolo de ayuno",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Permisos sanitarios y de transporte de ave viva sin verificación de vigencia",
+     "area": "Legal",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Eliminar regularizando SENASA, MTC y guías de remisión",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Personal sin contrato formal, RIT ni matriz de seguridad",
+     "area": "Legal",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Eliminar con regularización laboral y RIT aprobado",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Cartera vencida sin respaldo ejecutable ni política de crédito",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": 50400,
+     "tipo": "Puntual",
+     "nota": "",
+     "trat": "Renegociar Refinanciamiento Cerro Haylillas",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Descontrol del margen bruto:costos que suben sin detectarse. Sin estrategia de crédito con proveedores que financie el capital de trabajo.",
+     "area": "Finanzas",
+     "prob": "Baja",
+     "monto": 12312,
+     "tipo": "Anual",
+     "nota": "",
+     "trat": "Cerro Haylillas. Costeo operativo con reporte mensual de margen bruto por línea. Negociar crédito con proveedores para financiar capital de trabajo",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Situación laboral declarada: \"CTS / vacaciones\".",
+     "area": "Finanzas",
+     "prob": "Media",
+     "monto": 20464,
+     "tipo": "Puntual",
+     "nota": "",
+     "trat": "Cerro Haylillas- Exposición a fiscalización SUNAFIL",
+     "est": "Cerrado",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Brechas de formalización y control interno: permisos de funcionamiento no vigentes",
+     "area": "Legal",
+     "prob": "Baja",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Riesgo regulatorio, decisiones sin datos confiables y baja trazabilidad de la información",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL2",
+     "fuga": "Costo de deuda ponderado (Kd) 26.0% frente a margen EBITDA 1.5%. La deuda cuesta más de lo que la operación genera como margen. Gasto financiero anual S/. 41,600",
+     "area": "Finanzas",
+     "prob": "Media",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "Gasto financiero total S/ 41,600 al año: la fuga es solo el exceso de tasa",
+     "trat": "Reperfilar tasas y plazos hacia deuda más barata. Política de endeudamiento (tope deuda/EBITDA) y protección patrimonial",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Saldo de crédito fiscal a favor acumulado: S/89,000. No se ha analizado su composición para identificar qué parte es recuperable",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": 89000,
+     "tipo": "Puntual",
+     "nota": "",
+     "trat": "Analizar la composición del crédito fiscal",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Pago a cuenta de renta estimado S/. 20,000/mes ≈ 2.0% de las ventas. Alto respecto a la utilidad real de la empresa",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": 240000,
+     "tipo": "Caja",
+     "nota": "Es caja adelantada a SUNAT, no una pérdida: vuelve al liquidar la renta anual",
+     "trat": "Recalcular coeficiente de pagos a cuenta según utilidad real. Suspender/modificar pagos a cuenta (formulario 625) si corresponde",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Costo de deuda ponderado (Kd) 14.9% frente a margen EBITDA 16.2%. La deuda consume casi todo el margen operativo. Gasto financiero anual S/.302,070",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "Gasto financiero total S/ 302,070 al año: la fuga es solo el exceso de tasa",
+     "trat": "Reperfilar tasas y plazos hacia deuda más barata. Política de endeudamiento (tope deuda/EBITDA) y protección patrimonial",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Javas sin inventario ni control de retorno, con reposición no costeada",
+     "area": "Operaciones",
+     "prob": "Media",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Mitigar con ciclo cerrado de javas e inventario",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Costo real por ruta y por java desconocido: precios sin sustento",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Mitigar con modelo de costeo por actividad",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Régimen tributario no optimizado y sin plan preventivo ante fiscalización",
+     "area": "Finanzas",
+     "prob": "Media",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Mitigar con plan tributario y protocolo SUNAT",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    },
+    {
+     "ruc": "POL1",
+     "fuga": "Patrimonio personal y empresarial no separados",
+     "area": "Legal",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "nota": "",
+     "trat": "Eliminar con separación patrimonial y estructura societaria",
+     "est": "Abierto",
+     "fuente": "Diagnóstico CORE · hoja de riesgos"
+    }
+   ],
+   "kpis": [
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Ventas mensuales",
+     "vals": {
+      "POL1": "≈ S/ 1.0 millones"
+     },
+     "est": "azul",
+     "fuente": "Estimado del diagnóstico: pago a cuenta S/ 20,000 ≈ 2.0% de las ventas",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "big",
+     "sub2": "estimado · se confirma con estados financieros",
+     "home": 1
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Utilidad neta mensual",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Estados financieros cerrados · contabilidad en regularización (actividad 2.1)",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "home": 2
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Margen EBITDA",
+     "vals": {
+      "POL1": "16.2%",
+      "POL2": "1.5%"
+     },
+     "est": "ambar",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "",
+     "nota": "De cada S/ 100 vendidos, lo que queda antes de intereses, depreciación e impuestos",
+     "viz": "ring",
+     "num": {
+      "POL1": 16.2,
+      "POL2": 1.5
+     },
+     "home": 3
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Costo de la deuda (Kd)",
+     "vals": {
+      "POL1": "14.9%",
+      "POL2": "26.0%"
+     },
+     "est": "rojo",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "big",
+     "sub2": "tasa promedio anual de su deuda"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Gasto financiero anual",
+     "vals": {
+      "POL1": "S/ 302,070",
+      "POL2": "S/ 41,600"
+     },
+     "est": "rojo",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "big",
+     "sub2x": {
+      "POL1": "≈ 2.5% de las ventas"
+     },
+     "home": 4
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Cobertura de intereses",
+     "vals": {
+      "POL1": "≈ 6.4 veces"
+     },
+     "est": "verde",
+     "fuente": "Cálculo CORE: EBITDA estimado ÷ gasto financiero (ventas estimadas del diagnóstico)",
+     "base": "",
+     "meta": "",
+     "nota": "Sobre 3 veces, los intereses están cubiertos",
+     "viz": "big",
+     "sub2": "EBITDA ÷ gasto financiero · estimado",
+     "home": 5
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Deuda financiera estimada",
+     "vals": {
+      "POL1": "≈ S/ 2.03 millones",
+      "POL2": "≈ S/ 160,000"
+     },
+     "est": "azul",
+     "fuente": "Cálculo CORE: gasto financiero ÷ Kd",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "big",
+     "sub2": "gasto financiero ÷ costo de la deuda"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Cartera vencida sin respaldo ejecutable",
+     "vals": {
+      "POL1": "S/ 50,400"
+     },
+     "est": "rojo",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "Recuperar con cobranza extrajudicial",
+     "nota": "",
+     "viz": "big"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Caja disponible",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Fase F4 · tesorería y flujo de caja (planificada)",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Días de cobro (DSO)",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Fase F4 · control de cuentas por cobrar",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Presupuesto frente a lo real",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Fase F4 · presupuesto maestro (FIN-PLA-01)",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "n": "Contabilidad básica operativa",
+     "vals": {
+      "POL1": "70%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "En revisión · libros en regularización",
+     "viz": "ring",
+     "num": {
+      "POL1": 70
+     }
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "n": "Estructura documental y archivo",
+     "vals": {
+      "POL1": "50% · 80%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "parts",
+     "parts": [
+      [
+       "Recepción documental",
+       50
+      ],
+      [
+       "Política de archivo",
+       80
+      ]
+     ]
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "n": "Auditoría de procesos financieros",
+     "vals": {
+      "POL1": "85%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "POL1": 85
+     }
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "n": "Días de cierre contable",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Se mide cuando los libros estén al día",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Pagos a cuenta de renta",
+     "vals": {
+      "POL1": "S/ 20,000 al mes"
+     },
+     "est": "rojo",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "",
+     "nota": "Alto frente a la utilidad real",
+     "viz": "big",
+     "sub2": "S/ 240,000 al año · ≈ 2% de las ventas"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Crédito fiscal a favor sin analizar",
+     "vals": {
+      "POL1": "S/ 89,000"
+     },
+     "est": "ambar",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "Identificar la parte recuperable",
+     "nota": "",
+     "viz": "big"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Régimen tributario",
+     "vals": {
+      "POL1": "No optimizado"
+     },
+     "est": "ambar",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "",
+     "nota": "Sin plan preventivo ante fiscalización",
+     "viz": "status"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Planificación tributaria",
+     "vals": {
+      "POL1": "Pendiente"
+     },
+     "est": "gris",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "Espera el checklist tributario",
+     "viz": "status"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Carga tributaria del mes",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Preliquidación mensual (IGV, renta, EsSalud) · plan tributario",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Deuda tributaria e intereses",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Reporte de deudas y fraccionamientos SUNAT",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Planilla y liquidaciones",
+     "vals": {
+      "POL1": "Al día"
+     },
+     "est": "verde",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Contingencia CTS y vacaciones",
+     "vals": {
+      "POL1": "S/ 20,464"
+     },
+     "est": "verde",
+     "fuente": "Diagnóstico Finanzas (F0) · jul 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "big",
+     "sub2": "cerrada"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Contratos y regímenes laborales",
+     "vals": {
+      "POL1": "25%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "POL1": 25
+     }
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Planificación laboral estratégica",
+     "vals": {
+      "POL1": "Pendiente"
+     },
+     "est": "gris",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Costo laboral sobre ventas",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Planilla (LB) y ventas cerradas",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Pasivo laboral provisionado",
+     "vals": {},
+     "est": "gris",
+     "fuente": "CTS, gratificaciones y vacaciones provisionadas",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Procesos y organización",
+     "n": "Procesos TO-BE y estructura organizacional",
+     "vals": {
+      "POL1": "Por su aprobación"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "2 entregables esperan su aprobación",
+     "viz": "status"
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Procesos y organización",
+     "n": "SOPs del ciclo operativo (compra → entrega)",
+     "vals": {
+      "POL1": "En revisión"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Procesos y organización",
+     "n": "Protocolos de ayuno, transporte, pesaje y javas",
+     "vals": {
+      "POL1": "0 de 5"
+     },
+     "est": "rojo",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "POL1": 0
+     }
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Costos y eficiencia",
+     "n": "Merma de peso granja → entrega",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Línea base en el diagnóstico operativo (3 pesajes)",
+     "base": "",
+     "meta": "",
+     "nota": "Hoy no se mide ni tiene causa asignada"
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Costos y eficiencia",
+     "n": "Control de javas",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Inventario físico en el diagnóstico operativo",
+     "base": "",
+     "meta": "",
+     "nota": "Sin inventario ni control de retorno"
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Costos y eficiencia",
+     "n": "Costo real por ruta y por java",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Fase F3 · costeo real",
+     "base": "",
+     "meta": "",
+     "nota": "Hoy los precios no tienen sustento de costo"
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Costos y eficiencia",
+     "n": "Tiempo de parada en carga y descarga",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Fase F2",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Tecnología y datos",
+     "n": "Tablero de 6 KPIs operativos",
+     "vals": {
+      "POL1": "Planificado"
+     },
+     "est": "gris",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Tecnología y datos",
+     "n": "Registros operativos digitales",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Se mide en el diagnóstico operativo",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Legal",
+     "sub": "Societario",
+     "n": "Forma jurídica, estatutos y libros",
+     "vals": {
+      "POL1": "60%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "Falta escritura pública notarial",
+     "viz": "ring",
+     "num": {
+      "POL1": 60
+     }
+    },
+    {
+     "area": "Legal",
+     "sub": "Societario",
+     "n": "Poderes y vigencias SUNARP",
+     "vals": {
+      "POL1": "Vigentes"
+     },
+     "est": "verde",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Societario",
+     "n": "Inscripción REMYPE",
+     "vals": {
+      "POL1": "Pendiente de su decisión"
+     },
+     "est": "gris",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Societario",
+     "n": "Transformación persona natural → jurídica",
+     "vals": {
+      "POL1": "Bloqueada"
+     },
+     "est": "rojo",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Regulatorio y cumplimiento",
+     "n": "Auditoría laboral SUNAFIL y RIT",
+     "vals": {
+      "POL1": "80%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "POL1": 80
+     }
+    },
+    {
+     "area": "Legal",
+     "sub": "Regulatorio y cumplimiento",
+     "n": "Permisos sanitarios y de transporte (SENASA, MTC)",
+     "vals": {
+      "POL1": "Sin verificar"
+     },
+     "est": "rojo",
+     "fuente": "Auditoría legal inicial (F0) · en curso",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Regulatorio y cumplimiento",
+     "n": "Compliance básico",
+     "vals": {
+      "POL1": "40%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "POL1": 40
+     }
+    },
+    {
+     "area": "Legal",
+     "sub": "Regulatorio y cumplimiento",
+     "n": "Protocolo ante fiscalización SUNAT",
+     "vals": {
+      "POL1": "Pendiente"
+     },
+     "est": "gris",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Contractual y cobranza",
+     "n": "Contratos con granjas y clientes",
+     "vals": {
+      "POL1": "Sin formalizar"
+     },
+     "est": "rojo",
+     "fuente": "Auditoría legal inicial (F0) · en curso",
+     "base": "",
+     "meta": "",
+     "nota": "Sin cláusulas de penalidad",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Contractual y cobranza",
+     "n": "Cobranza extrajudicial de cartera",
+     "vals": {
+      "POL1": "Pendiente"
+     },
+     "est": "gris",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "Cartera vencida S/ 50,400",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Patrimonio",
+     "n": "Separación patrimonio personal y empresa",
+     "vals": {
+      "POL1": "No separados"
+     },
+     "est": "rojo",
+     "fuente": "Auditoría legal inicial (F0) · en curso",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    },
+    {
+     "area": "Legal",
+     "sub": "Patrimonio",
+     "n": "Saneamiento de bienes",
+     "vals": {
+      "POL1": "15%"
+     },
+     "est": "ambar",
+     "fuente": "Avance del plan",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "POL1": 15
+     }
+    }
+   ],
+   "analytics": {
+    "enabled": true,
+    "porRuc": {
+     "POL1": {
+      "rubro": "Avícola · compra, transporte y entrega de ave viva",
+      "palancas": [
+       {
+        "id": "deuda",
+        "n": "Reperfilar la deuda",
+        "tipo": "utilidad",
+        "deuda": 2027315,
+        "kd": 14.9,
+        "min": 6,
+        "def": 11.9,
+        "nota": "Deuda estimada S/ 2.03 M (gasto financiero S/ 302,070 ÷ Kd 14.9%)"
+       },
+       {
+        "id": "mb",
+        "n": "Controlar el margen bruto",
+        "tipo": "utilidad",
+        "base": 12312,
+        "def": 100,
+        "nota": "Pérdida anual estimada en la hoja de riesgos: S/ 12,312"
+       },
+       {
+        "id": "pac",
+        "n": "Ajustar pagos a cuenta",
+        "tipo": "cajaMes",
+        "ventas": 1000000,
+        "coef": 2,
+        "def": 1.5,
+        "nota": "Ventas estimadas ≈ S/ 1.0 M al mes · coeficiente actual ≈ 2.0%"
+       },
+       {
+        "id": "cf",
+        "n": "Recuperar crédito fiscal",
+        "tipo": "caja",
+        "base": 89000,
+        "def": 50,
+        "nota": "Saldo a favor S/ 89,000 sin analizar"
+       },
+       {
+        "id": "cart",
+        "n": "Cobrar cartera vencida",
+        "tipo": "caja",
+        "base": 50400,
+        "def": 60,
+        "nota": "Cartera vencida S/ 50,400 sin respaldo ejecutable"
+       }
+      ],
+      "bloqueadas": [
+       "Merma de peso granja → entrega",
+       "Retorno de javas",
+       "Costo real por ruta y por java"
+      ],
+      "bloqNota": "Se valorizan con el diagnóstico operativo (3 pesajes e inventario de javas)",
+      "rent": {
+       "ventas_m": 1000000,
+       "ebitda": 16.2,
+       "gf": 302070
+      },
+      "insumos": [
+       [
+        "Margen EBITDA",
+        "ok",
+        "16.2%"
+       ],
+       [
+        "Ventas",
+        "est",
+        "≈ S/ 12 M al año"
+       ],
+       [
+        "Deuda financiera",
+        "est",
+        "≈ S/ 2.03 M"
+       ],
+       [
+        "Estados financieros de 3 años",
+        "no",
+        ""
+       ],
+       [
+        "Proyección de flujos a 5 años",
+        "no",
+        ""
+       ],
+       [
+        "Costo de capital (WACC)",
+        "no",
+        ""
+       ],
+       [
+        "Tasación de activos",
+        "no",
+        ""
+       ]
+      ],
+      "deuda": 2027315,
+      "blindaje": [
+       [
+        "Patrimonio personal y empresa separados",
+        "No",
+        0
+       ],
+       [
+        "Saneamiento de bienes",
+        "15%",
+        15
+       ],
+       [
+        "Forma jurídica, estatutos y libros",
+        "60%",
+        60
+       ],
+       [
+        "Poderes y vigencias SUNARP",
+        "Vigentes",
+        100
+       ],
+       [
+        "Contratos con granjas y clientes",
+        "Sin formalizar",
+        0
+       ],
+       [
+        "Permisos SENASA y MTC",
+        "Sin verificar",
+        0
+       ],
+       [
+        "Contingencia CTS y vacaciones",
+        "Cerrada",
+        100
+       ]
+      ],
+      "activos": {
+       "items": [],
+       "nota": "Se valorizan con el inventario patrimonial (PAT-REG-01) y la tasación"
+      }
+     },
+     "POL2": {
+      "rubro": "Por registrar",
+      "palancas": [
+       {
+        "id": "deuda",
+        "n": "Reperfilar la deuda",
+        "tipo": "utilidad",
+        "deuda": 160000,
+        "kd": 26,
+        "min": 6,
+        "def": 23,
+        "nota": "Deuda estimada S/ 160,000 (gasto financiero S/ 41,600 ÷ Kd 26.0%)"
+       }
+      ],
+      "bloqueadas": [
+       "Margen bruto por línea",
+       "Capital de trabajo"
+      ],
+      "bloqNota": "Se valorizan con los estados financieros de esta empresa",
+      "rent": {
+       "ebitda": 1.5,
+       "gf": 41600
+      },
+      "insumos": [
+       [
+        "Margen EBITDA",
+        "ok",
+        "1.5%"
+       ],
+       [
+        "Deuda financiera",
+        "est",
+        "≈ S/ 160,000"
+       ],
+       [
+        "Ventas",
+        "no",
+        ""
+       ],
+       [
+        "Estados financieros de 3 años",
+        "no",
+        ""
+       ],
+       [
+        "Proyección de flujos a 5 años",
+        "no",
+        ""
+       ],
+       [
+        "Costo de capital (WACC)",
+        "no",
+        ""
+       ]
+      ],
+      "deuda": 160000,
+      "blindaje": [],
+      "activos": {
+       "items": [],
+       "nota": "Pendiente de la auditoría legal y patrimonial de esta empresa"
+      }
+     }
+    }
+   },
+   "fuenteDatos": "Tablero CORE de Pollitos de Oro (hojas Actividades, Fases, Entregables, Solicitudes y Riesgos)",
+   "diagRuc": {
+    "POL2": {
+     "Finanzas": {
+      "est": "Completo",
+      "av": 100,
+      "fecha": "jul 2026"
+     },
+     "Operaciones": {
+      "est": "Por iniciar",
+      "av": 0,
+      "fecha": ""
+     },
+     "Legal": {
+      "est": "Por iniciar",
+      "av": 0,
+      "fecha": ""
+     }
+    }
+   },
+   "servicios": {
+    "POL1": {
+     "recupera": [
+      {
+       "n": "Crédito fiscal a favor",
+       "est": "aplica",
+       "monto": 89000,
+       "txt": "Hasta S/ 89,000",
+       "nota": "Saldo acumulado sin analizar: se identifica qué parte es recuperable",
+       "fuente": "Diagnóstico Finanzas (F0) · jul 2026"
+      },
+      {
+       "n": "Cartera vencida por cobrar",
+       "est": "aplica",
+       "monto": 50400,
+       "txt": "S/ 50,400",
+       "nota": "Cobranza extrajudicial y títulos valores",
+       "fuente": "Diagnóstico Finanzas (F0) · jul 2026"
+      },
+      {
+       "n": "Pagos a cuenta de renta",
+       "est": "aplica",
+       "monto": null,
+       "txt": "S/ 20,000 al mes en revisión",
+       "nota": "Si el coeficiente baja según la utilidad real, deja de adelantar la diferencia a SUNAT",
+       "fuente": "Diagnóstico Finanzas (F0) · jul 2026"
+      },
+      {
+       "n": "Subsidios EsSalud por descanso médico",
+       "est": "revisar",
+       "monto": null,
+       "txt": "Por medir",
+       "nota": "EsSalud paga desde el día 21 de descanso; hay 6 meses para pedir el reembolso por VIVA EsSalud. Necesitamos la lista de descansos médicos.",
+       "fuente": "Norma EsSalud"
+      },
+      {
+       "n": "Fondos de la cuenta de detracciones",
+       "est": "revisar",
+       "monto": null,
+       "txt": "Por consultar",
+       "nota": "Solo si sus clientes le depositan detracciones. Se puede pedir la liberación hasta 3 veces al año (enero, mayo y setiembre) sin deuda tributaria pendiente.",
+       "fuente": "Procedimiento SUNAT"
+      }
+     ],
+     "noaplica": [
+      "Drawback: solo para empresas exportadoras"
+     ],
+     "presta": [
+      [
+       "Estados financieros al día",
+       "ambar",
+       "Contabilidad básica al 70%, libros en regularización"
+      ],
+      [
+       "Cobertura de intereses sobre 3 veces",
+       "verde",
+       "≈ 6.4 veces (EBITDA estimado ÷ gasto financiero)"
+      ],
+      [
+       "Costo de la deuda competitivo",
+       "rojo",
+       "Kd 14.9% anual"
+      ],
+      [
+       "Cartera con respaldo ejecutable",
+       "rojo",
+       "S/ 50,400 vencidos sin títulos valores"
+      ],
+      [
+       "Patrimonio de la empresa separado del personal",
+       "rojo",
+       "No separados"
+      ],
+      [
+       "Contratos con clientes formalizados",
+       "rojo",
+       "Sin cláusulas de penalidad"
+      ],
+      [
+       "Poderes y vigencias al día",
+       "verde",
+       "Vigentes en SUNARP"
+      ],
+      [
+       "Sin deuda tributaria vencida",
+       "gris",
+       "Por verificar con reporte SUNAT"
+      ]
+     ],
+     "fiscal": {
+      "SUNAT": [
+       [
+        "Libros contables al día",
+        "ambar",
+        "70%"
+       ],
+       [
+        "Sustento del crédito fiscal",
+        "rojo",
+        "Sin analizar"
+       ],
+       [
+        "Protocolo ante fiscalización",
+        "gris",
+        "Pendiente"
+       ],
+       [
+        "Régimen tributario revisado",
+        "ambar",
+        "No optimizado"
+       ]
+      ],
+      "SUNAFIL": [
+       [
+        "Contratos de trabajo en regla",
+        "ambar",
+        "25%"
+       ],
+       [
+        "Reglamento interno (RIT) y auditoría laboral",
+        "ambar",
+        "80%"
+       ],
+       [
+        "Planilla y liquidaciones",
+        "verde",
+        "Al día"
+       ],
+       [
+        "CTS y vacaciones",
+        "verde",
+        "Contingencia cerrada"
+       ]
+      ]
+     },
+     "bench": {
+      "rubro": "Avícola · ave viva",
+      "propios": [
+       [
+        "Margen EBITDA",
+        "16.2%"
+       ],
+       [
+        "Cobertura de intereses",
+        "≈ 6.4 veces"
+       ],
+       [
+        "Merma de peso",
+        "Por medir"
+       ],
+       [
+        "Costo por ruta",
+        "Por medir"
+       ]
+      ]
+     },
+     "sueldo": {
+      "utilidad": null
+     },
+     "hook": "Tiene hasta S/ 139,400 en saldo a favor y cartera que pueden volver a su caja"
+    },
+    "POL2": {
+     "recupera": [],
+     "noaplica": [
+      "Drawback: solo para empresas exportadoras"
+     ],
+     "presta": [
+      [
+       "Margen EBITDA suficiente",
+       "rojo",
+       "1.5% de las ventas"
+      ],
+      [
+       "Costo de la deuda competitivo",
+       "rojo",
+       "Kd 26.0% anual"
+      ],
+      [
+       "Estados financieros al día",
+       "gris",
+       "Por verificar"
+      ]
+     ],
+     "fiscal": {
+      "SUNAT": [
+       [
+        "Libros contables al día",
+        "gris",
+        "Por verificar"
+       ],
+       [
+        "Protocolo ante fiscalización",
+        "gris",
+        "Pendiente"
+       ]
+      ],
+      "SUNAFIL": [
+       [
+        "Contratos y planilla",
+        "gris",
+        "Por verificar"
+       ]
+      ]
+     },
+     "bench": {
+      "rubro": "Por registrar",
+      "propios": [
+       [
+        "Margen EBITDA",
+        "1.5%"
+       ],
+       [
+        "Costo de la deuda",
+        "26.0%"
+       ]
+      ]
+     },
+     "sueldo": {
+      "utilidad": null
+     },
+     "hook": ""
+    }
+   }
+  },
+  "RAP": {
+   "id": "RAP",
+   "grupo": "Rapesa",
+   "plan": "Propuesta · Finanzas y Operaciones",
+   "lider": "Flor Mio · Finanzas",
+   "areas": [
+    "Finanzas",
+    "Operaciones"
+   ],
+   "empresas": [
+    {
+     "ruc": "RAP1",
+     "nombre": "RAPESA",
+     "rucNum": "[RUC por registrar]"
+    }
+   ],
+   "diagnostico": {
+    "Finanzas": {
+     "est": "Preliminar",
+     "av": 30,
+     "fecha": "propuesta"
+    },
+    "Operaciones": {
+     "est": "Preliminar",
+     "av": 30,
+     "fecha": "propuesta"
+    }
+   },
+   "actividades": [],
+   "fases": [
+    {
+     "ruc": "RAP1",
+     "area": "Finanzas",
+     "fase": "P1",
+     "nom": "Comprar bien y cimentar",
+     "paso": 1,
+     "contratada": true,
+     "alc": "Propuesta",
+     "av": 0,
+     "gate": "Propuesta enviada",
+     "crit": "Deudas y activos ordenados",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "RAP1",
+     "area": "Operaciones",
+     "fase": "P2",
+     "nom": "Hacerlo trabajar bien",
+     "paso": 2,
+     "contratada": true,
+     "alc": "Propuesta",
+     "av": 0,
+     "gate": "Propuesta enviada",
+     "crit": "Costo por km y disponibilidad bajo control",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "RAP1",
+     "area": "Finanzas",
+     "fase": "P3",
+     "nom": "Saber si gana o pierde",
+     "paso": 3,
+     "contratada": true,
+     "alc": "Propuesta",
+     "av": 0,
+     "gate": "Propuesta enviada",
+     "crit": "Tablero mensual",
+     "ini": null,
+     "fin": null
+    },
+    {
+     "ruc": "RAP1",
+     "area": "Finanzas",
+     "fase": "P4",
+     "nom": "Cuidarlo y decidir el futuro",
+     "paso": 4,
+     "contratada": true,
+     "alc": "Propuesta",
+     "av": 0,
+     "gate": "Propuesta enviada",
+     "crit": "Deuda Divemotor reestructurada",
+     "ini": null,
+     "fin": null
+    }
+   ],
+   "solicitudes": [],
+   "checklist": [],
+   "fugas": [
+    {
+     "ruc": "RAP1",
+     "fuga": "Deudas con SUNAT, SAT y planilla acumulando intereses y multas",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": 315000,
+     "tipo": "Exposición",
+     "trat": "Fraccionamiento y cronograma de pagos",
+     "est": "Abierto",
+     "fuente": "Propuesta a Rapesa · 2026"
+    },
+    {
+     "ruc": "RAP1",
+     "fuga": "Deuda viva con Divemotor: la cuota pausada puede volver",
+     "area": "Finanzas",
+     "prob": "Alta",
+     "monto": 2000000,
+     "tipo": "Exposición",
+     "trat": "Reestructurar plazos y tasa",
+     "est": "Abierto",
+     "fuente": "Propuesta a Rapesa · 2026"
+    },
+    {
+     "ruc": "RAP1",
+     "fuga": "El kilómetro cuesta S/ 9.54 frente a S/ 4.00 de referencia",
+     "area": "Operaciones",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "trat": "Costo por unidad y control de combustible",
+     "est": "Abierto",
+     "fuente": "Propuesta a Rapesa · 2026"
+    },
+    {
+     "ruc": "RAP1",
+     "fuga": "80% de las reparaciones son de emergencia; flota disponible 65%",
+     "area": "Operaciones",
+     "prob": "Alta",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "trat": "Mantenimiento preventivo",
+     "est": "Abierto",
+     "fuente": "Propuesta a Rapesa · 2026"
+    },
+    {
+     "ruc": "RAP1",
+     "fuga": "64% de los bienes pertenecen al banco",
+     "area": "Finanzas",
+     "prob": "Media",
+     "monto": null,
+     "tipo": "Por valorizar",
+     "trat": "Valorizar activos y liberar garantías",
+     "est": "Abierto",
+     "fuente": "Propuesta a Rapesa · 2026"
+    }
+   ],
+   "kpis": [
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Utilidad mensual",
+     "vals": {
+      "RAP1": "S/ 118,000"
+     },
+     "est": "ambar",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "No la conocía con seguridad: no hay tablero",
+     "viz": "big",
+     "home": 1
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Deuda viva con Divemotor",
+     "vals": {
+      "RAP1": "S/ 2 millones"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "Cuota pausada: si vuelve, se come casi toda la ganancia",
+     "viz": "big",
+     "home": 2
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Bienes que son del banco",
+     "vals": {
+      "RAP1": "64%"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "RAP1": 64
+     },
+     "home": 3
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Finanzas",
+     "n": "Caja disponible",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Diagnóstico financiero (F0)",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Deudas con SUNAT, SAT y planilla",
+     "vals": {
+      "RAP1": "S/ 315,000"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "big",
+     "home": 4
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Tributario",
+     "n": "Carga tributaria del mes",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Diagnóstico tributario",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "n": "Tablero financiero mensual",
+     "vals": {
+      "RAP1": "No existe"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "Se entera cuando ya pasó",
+     "viz": "status"
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Contabilidad",
+     "n": "Días de cierre contable",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Diagnóstico contable",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Deuda de planilla",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Incluida en los S/ 315,000 · se separa en el diagnóstico",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Finanzas",
+     "sub": "Laboral",
+     "n": "Costo laboral sobre ventas",
+     "vals": {},
+     "est": "gris",
+     "fuente": "Diagnóstico laboral",
+     "base": "",
+     "meta": "",
+     "nota": ""
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Costos y eficiencia",
+     "n": "Costo por kilómetro",
+     "vals": {
+      "RAP1": "S/ 9.54"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ref",
+     "num": {
+      "RAP1": 9.54
+     },
+     "ref": 4,
+     "refl": "Referencia de la propuesta S/ 4.00",
+     "unit": "S/",
+     "home": 5
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Costos y eficiencia",
+     "n": "Flota disponible",
+     "vals": {
+      "RAP1": "65%"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "ring",
+     "num": {
+      "RAP1": 65
+     },
+     "home": 6
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Procesos y organización",
+     "n": "Reparaciones de emergencia",
+     "vals": {
+      "RAP1": "80%"
+     },
+     "est": "rojo",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "Del total de reparaciones",
+     "viz": "ring",
+     "num": {
+      "RAP1": 80
+     }
+    },
+    {
+     "area": "Operaciones",
+     "sub": "Tecnología y datos",
+     "n": "Unidades nuevas",
+     "vals": {
+      "RAP1": "4 Arocs"
+     },
+     "est": "azul",
+     "fuente": "Propuesta a Rapesa · 2026",
+     "base": "",
+     "meta": "",
+     "nota": "",
+     "viz": "status"
+    }
+   ],
+   "analytics": {
+    "enabled": false,
+    "porRuc": {
+     "RAP1": {
+      "rubro": "Transporte de carga · flota pesada",
+      "palancas": [
+       {
+        "id": "km",
+        "n": "Bajar el costo por kilómetro",
+        "tipo": "utilidad",
+        "costo": 9.54,
+        "ref": 4,
+        "def": 7,
+        "nota": "Hoy S/ 9.54 por km frente a S/ 4.00 de referencia · ingrese los km que recorre al mes"
+       }
+      ],
+      "bloqueadas": [
+       "Disponibilidad de flota (65%)",
+       "Reestructurar la deuda con Divemotor",
+       "Fraccionar deudas SUNAT, SAT y planilla"
+      ],
+      "bloqNota": "Se valorizan con el diagnóstico financiero y de flota",
+      "rent": {
+       "utilidad_m": 118000,
+       "fuente": "Utilidad S/ 118,000 al mes · deuda Divemotor S/ 2 M + SUNAT, SAT y planilla S/ 315,000"
+      },
+      "insumos": [
+       [
+        "Utilidad mensual",
+        "ok",
+        "S/ 118,000"
+       ],
+       [
+        "Deuda con Divemotor",
+        "ok",
+        "S/ 2 M"
+       ],
+       [
+        "Deudas SUNAT, SAT y planilla",
+        "ok",
+        "S/ 315,000"
+       ],
+       [
+        "Estados financieros de 3 años",
+        "no",
+        ""
+       ],
+       [
+        "Proyección de flujos a 5 años",
+        "no",
+        ""
+       ],
+       [
+        "Tasación de la flota",
+        "no",
+        ""
+       ]
+      ],
+      "deuda": 2315000,
+      "blindaje": [
+       [
+        "Bienes libres de garantía",
+        "36%",
+        36
+       ],
+       [
+        "Deudas SUNAT, SAT y planilla regularizadas",
+        "Pendientes",
+        0
+       ],
+       [
+        "Deuda Divemotor reestructurada",
+        "No",
+        0
+       ]
+      ],
+      "activos": {
+       "items": [
+        [
+         "Bienes que son del banco",
+         "64%",
+         64
+        ],
+        [
+         "Unidades nuevas",
+         "4 Arocs",
+         null
+        ]
+       ],
+       "nota": "El 36% restante es libre de garantía"
+      }
+     }
+    }
+   },
+   "fuenteDatos": "Presentación de la propuesta a Rapesa",
+   "servicios": {
+    "RAP1": {
+     "recupera": [
+      {
+       "n": "Fondos de la cuenta de detracciones",
+       "est": "aplica",
+       "monto": null,
+       "txt": "Saldo por consultar",
+       "nota": "El transporte de carga está sujeto a detracción. Para liberar el saldo no debe tener deuda tributaria pendiente: primero hay que fraccionar los S/ 315,000.",
+       "fuente": "Procedimiento SUNAT · propuesta"
+      },
+      {
+       "n": "Subsidios EsSalud por descanso médico",
+       "est": "revisar",
+       "monto": null,
+       "txt": "Por medir",
+       "nota": "EsSalud paga desde el día 21 de descanso; hay 6 meses para pedir el reembolso. Clave en flotas con conductores.",
+       "fuente": "Norma EsSalud"
+      },
+      {
+       "n": "Saldo a favor y crédito fiscal",
+       "est": "revisar",
+       "monto": null,
+       "txt": "Por medir",
+       "nota": "Se revisa en el diagnóstico tributario",
+       "fuente": "Propuesta a Rapesa · 2026"
+      }
+     ],
+     "noaplica": [
+      "Drawback: solo para empresas exportadoras"
+     ],
+     "presta": [
+      [
+       "Estados financieros y tablero mensual",
+       "rojo",
+       "No existe tablero financiero"
+      ],
+      [
+       "Sin deuda tributaria vencida",
+       "rojo",
+       "S/ 315,000 con SUNAT, SAT y planilla"
+      ],
+      [
+       "Bienes libres de garantía",
+       "rojo",
+       "Solo 36%: el 64% es del banco"
+      ],
+      [
+       "La operación genera utilidad",
+       "verde",
+       "S/ 118,000 al mes"
+      ],
+      [
+       "Deuda principal reestructurada",
+       "rojo",
+       "Divemotor S/ 2 millones con cuota pausada"
+      ]
+     ],
+     "fiscal": {
+      "SUNAT": [
+       [
+        "Deudas tributarias regularizadas",
+        "rojo",
+        "S/ 315,000 pendientes"
+       ],
+       [
+        "Libros contables al día",
+        "gris",
+        "Por verificar"
+       ],
+       [
+        "Protocolo ante fiscalización",
+        "gris",
+        "Pendiente"
+       ]
+      ],
+      "SUNAFIL": [
+       [
+        "Planilla al día",
+        "rojo",
+        "Deuda de planilla incluida en los S/ 315,000"
+       ],
+       [
+        "Contratos de conductores",
+        "gris",
+        "Por verificar"
+       ],
+       [
+        "SST y SCTR de conductores",
+        "gris",
+        "Por verificar"
+       ]
+      ]
+     },
+     "bench": {
+      "rubro": "Transporte de carga",
+      "propios": [
+       [
+        "Costo por kilómetro",
+        "S/ 9.54"
+       ],
+       [
+        "Flota disponible",
+        "65%"
+       ],
+       [
+        "Reparaciones de emergencia",
+        "80%"
+       ]
+      ]
+     },
+     "sueldo": {
+      "utilidad": 118000
+     },
+     "hook": "Su cuenta de detracciones puede liberar fondos cuando se ordene la deuda tributaria"
+    }
+   }
+  }
+ },
+ "subs": {
+  "Finanzas": [
+   "Finanzas",
+   "Contabilidad",
+   "Tributario",
+   "Laboral"
+  ],
+  "Operaciones": [
+   "Procesos y organización",
+   "Costos y eficiencia",
+   "Tecnología y datos"
+  ],
+  "Legal": [
+   "Societario",
+   "Regulatorio y cumplimiento",
+   "Contractual y cobranza",
+   "Patrimonio"
+  ]
+ },
+ "academia": [
+  {
+   "area": "Finanzas",
+   "t": "Cómo leer su flujo de caja de 13 semanas",
+   "d": "Para saber con semanas de anticipación si alcanza la caja.",
+   "modo": "Virtual",
+   "dur": "60 min",
+   "prof": "Flor Mio"
+  },
+  {
+   "area": "Finanzas",
+   "t": "Pagos a cuenta y crédito fiscal: cómo liberar caja legalmente",
+   "d": "Qué revisar antes de pedir la modificación de pagos a cuenta.",
+   "modo": "Virtual",
+   "dur": "60 min",
+   "prof": "Tributario CORE"
+  },
+  {
+   "area": "Operaciones",
+   "t": "Pesaje en 3 puntos: medir la merma de verdad",
+   "d": "Práctica en patio con el equipo de despacho.",
+   "modo": "En su empresa",
+   "dur": "90 min",
+   "prof": "Operaciones CORE"
+  },
+  {
+   "area": "Operaciones",
+   "t": "Ciclo cerrado de javas",
+   "d": "Inventario, retorno, lavado y desinfección con registro.",
+   "modo": "En su empresa",
+   "dur": "60 min",
+   "prof": "Operaciones CORE"
+  },
+  {
+   "area": "Legal",
+   "t": "Contratos con granjas y clientes que sí se pueden cobrar",
+   "d": "Penalidad, mérito ejecutivo y fecha cierta, con ejemplos.",
+   "modo": "Virtual",
+   "dur": "60 min",
+   "prof": "Legal CORE"
+  },
+  {
+   "area": "Legal",
+   "t": "SST, IPERC y RIT: qué revisa SUNAFIL",
+   "d": "Simulacro de inspección y lista de documentos.",
+   "modo": "Presencial",
+   "dur": "120 min",
+   "prof": "Legal CORE"
+  }
+ ],
+ "usuarios": {
+  "pollitos": {
+   "cliente": "POL",
+   "nombre": "Gerencia General",
+   "clave": "demo"
+  },
+  "rapesa": {
+   "cliente": "RAP",
+   "nombre": "Gerencia General",
+   "clave": "demo"
+  }
+ },
+ "regla": "Nivel alto (rojo): probabilidad alta y monto mayor a S/ 20,000 — regla del tablero CORE"
+}

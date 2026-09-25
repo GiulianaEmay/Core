@@ -1,95 +1,142 @@
-from pydantic import BaseModel
+from typing import Literal
 
-from app.models import PeriodoTipo, Rol
+from pydantic import BaseModel, ConfigDict, Field
 
-
-class EmpresaCreate(BaseModel):
-    ruc: str
-    razon_social: str
-    regimen: str = ""
-    rubro: str = ""
-    plan: str = "trial"
-    meses_colchon_caja: float = 1.0
-    wacc_tasa_libre_riesgo: float = 0.0
-    wacc_prima_mercado: float = 0.0
-    wacc_beta: float = 1.0
-    wacc_riesgo_pais: float = 0.0
-    wacc_prima_tamano: float = 0.0
-    wacc_costo_deuda_tea: float = 0.0
-
-
-class EmpresaOut(BaseModel):
-    id: int
-    ruc: str
-    razon_social: str
-    regimen: str
-    rubro: str
-    plan: str
-
-    class Config:
-        from_attributes = True
+from app.models import Rol
 
 
 class UsuarioOut(BaseModel):
     id: int
     email: str
     nombre: str
+    username: str | None = None
     rol: Rol
-    empresa_id: int | None
+    cliente_id: str | None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UsuarioUpdate(BaseModel):
     rol: Rol | None = None
-    empresa_id: int | None = None
+    cliente_id: str | None = None
+    nombre: str | None = None
 
 
-class PeriodoCreate(BaseModel):
-    empresa_id: int
-    tipo: PeriodoTipo = PeriodoTipo.mensual
-    anio: int
-    mes: int | None = None
+class ClienteIn(BaseModel):
+    id: str = Field(min_length=2, max_length=10, pattern=r"^[A-Za-z0-9_-]+$")
+    grupo: str
+    plan: str = ""
+    lider: str = ""
+    areas: list[str] = []
+    fuente_datos: str = ""
+    analytics_enabled: bool = False
+    permite_acciones: bool = False
 
 
-class PeriodoOut(BaseModel):
+class ClienteUpdate(BaseModel):
+    grupo: str | None = None
+    plan: str | None = None
+    lider: str | None = None
+    areas: list[str] | None = None
+    fuente_datos: str | None = None
+    analytics_enabled: bool | None = None
+    permite_acciones: bool | None = None
+
+
+class AccesoIn(BaseModel):
+    username: str = Field(min_length=4, max_length=40, pattern=r"^[a-z0-9_-]+$")
+    password: str | None = Field(default=None, min_length=8, max_length=72)
+    nombre: str = ""
+
+
+class PasswordIn(BaseModel):
+    password: str | None = Field(default=None, min_length=8, max_length=72)
+
+
+class ClienteOut(ClienteIn):
+    model_config = ConfigDict(from_attributes=True)
+
+
+class EmpresaIn(BaseModel):
+    cliente_id: str
+    codigo: str = Field(min_length=2, max_length=20, pattern=r"^[A-Za-z0-9_-]+$")
+    nombre: str
+    ruc_num: str = ""
+    orden: int = 0
+    analytics: dict | None = None
+    servicios: dict | None = None
+
+
+class EmpresaUpdate(BaseModel):
+    nombre: str | None = None
+    ruc_num: str | None = None
+    orden: int | None = None
+    analytics: dict | None = None
+    servicios: dict | None = None
+
+
+class EmpresaOut(EmpresaIn):
     id: int
-    empresa_id: int
-    tipo: PeriodoTipo
-    anio: int
-    mes: int | None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
-class SaldoIn(BaseModel):
+class DecisionIn(BaseModel):
     clave: str
-    valor: float
+    decision: Literal["Aprobado", "Observado"]
+    comentario: str = ""
+
+
+class SolicitudNueva(BaseModel):
+    empresa: str
+    area: str
+    tipo: Literal["Consulta operativa", "Incidencia", "Otro"]
+    sol: str = Field(min_length=5)
+
+
+class EnvioIn(BaseModel):
+    nombre: str = Field(min_length=1)
+    url: str | None = None
+
+
+class KpiIn(BaseModel):
+    cliente_id: str
+    area: str
+    sub: str = ""
+    n: str
+    est: str = "gris"
     fuente: str = ""
+    base: str = ""
+    meta: str = ""
+    nota: str = ""
+    viz: str | None = None
+    sub2: str = ""
+    home: int | None = None
+    unit: str | None = None
+    ref: float | None = None
+    refl: str | None = None
+    parts: list | None = None
+    vals: dict[str, str] = {}
+    num: dict[str, float] = {}
+    sub2x: dict[str, str] = {}
 
 
-class SaldoOut(SaldoIn):
-    id: int
-
-    class Config:
-        from_attributes = True
-
-
-class LineaContabilidad(BaseModel):
-    clave: str
-    cuenta: str
-    signo: str
-    importe: float
-    pct_ingresos: float
-
-
-class ContabilidadOut(BaseModel):
-    periodo_id: int
-    ingresos: float
-    ebitda: float
-    ebit: float
-    margen_operativo: float
-    utilidad_neta: float
-    lineas: list[LineaContabilidad]
+class KpiUpdate(BaseModel):
+    area: str | None = None
+    sub: str | None = None
+    n: str | None = None
+    est: str | None = None
+    fuente: str | None = None
+    base: str | None = None
+    meta: str | None = None
+    nota: str | None = None
+    viz: str | None = None
+    sub2: str | None = None
+    home: int | None = None
+    unit: str | None = None
+    ref: float | None = None
+    refl: str | None = None
+    parts: list | None = None
+    vals: dict[str, str] | None = None
+    num: dict[str, float] | None = None
+    sub2x: dict[str, str] | None = None

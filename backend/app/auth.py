@@ -63,6 +63,18 @@ def _verify_session_token(token: str) -> dict:
         raise credentials_error
 
 
+def rol_inicial(email: str, verificado: bool, es_el_primero: bool, admin_emails: list[str]) -> models.Rol:
+    """Rol con el que se crea un usuario la primera vez que inicia sesion.
+
+    Con ADMIN_EMAILS configurado, solo esos correos (verificados) son admin.
+    Sin configurar, el primer usuario de una base nueva es admin: de lo
+    contrario nadie podria crear clientes ni asignar al resto.
+    """
+    if admin_emails:
+        return models.Rol.admin if verificado and email.lower() in admin_emails else models.Rol.cliente
+    return models.Rol.admin if es_el_primero else models.Rol.cliente
+
+
 def _obtener_o_crear_usuario(clerk_user_id: str, db: Session) -> Usuario:
     usuario = db.query(Usuario).filter(Usuario.clerk_user_id == clerk_user_id).first()
     if usuario:
@@ -75,23 +87,18 @@ def _obtener_o_crear_usuario(clerk_user_id: str, db: Session) -> Usuario:
     )
     resp.raise_for_status()
     data = resp.json()
-    email = next(
-        (
-            e["email_address"]
-            for e in data.get("email_addresses", [])
-            if e["id"] == data.get("primary_email_address_id")
-        ),
-        None,
-    ) or (data["email_addresses"][0]["email_address"] if data.get("email_addresses") else None)
-    if not email:
+    direcciones = data.get("email_addresses", [])
+    principal = next((e for e in direcciones if e["id"] == data.get("primary_email_address_id")), None) or (
+        direcciones[0] if direcciones else None
+    )
+    if not principal:
         raise HTTPException(status_code=400, detail="El usuario de Clerk no tiene email")
+    email = principal["email_address"]
+    verificado = (principal.get("verification") or {}).get("status") == "verified"
 
     nombre = " ".join(filter(None, [data.get("first_name"), data.get("last_name")])).strip()
 
-    # El primer usuario que inicia sesion en una base nueva se vuelve admin;
-    # de lo contrario nadie podria crear empresas ni asignar al resto.
-    es_el_primero = db.query(Usuario).count() == 0
-    rol = models.Rol.admin if es_el_primero else models.Rol.cliente
+    rol = rol_inicial(email, verificado, db.query(Usuario).count() == 0, settings.admin_emails_list)
 
     usuario = Usuario(clerk_user_id=clerk_user_id, email=email, nombre=nombre, rol=rol)
     db.add(usuario)

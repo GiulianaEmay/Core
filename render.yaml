@@ -13,5 +13,7 @@ services:
         sync: false
       - key: CLERK_ISSUER
         sync: false # Frontend API URL de Clerk, ej: https://tu-instancia.clerk.accounts.dev
+      - key: ADMIN_EMAILS
+        sync: false # correos del equipo CORE (admin), separados por coma
       - key: ALLOWED_ORIGINS
         sync: false # dominio del frontend en Vercel, ej: https://core-finq.vercel.app

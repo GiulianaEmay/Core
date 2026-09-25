@@ -1,0 +1,19 @@
+/* Agregados del portal en Next (el resto viene de portal.css, copiado del HTML original) */
+a.nav{text-decoration:none}
+.pick{background:#0E1B55;border:1px solid #22307A;border-radius:10px;color:#fff;height:34px;padding:0 8px;font-size:12.5px;width:100%}
+.tbl-wrap{overflow-x:auto}
+.mini{font-size:12px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.modal-bg{position:fixed;inset:0;background:rgba(7,15,56,.55);display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;z-index:60}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:760px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.modal h2{font-family:var(--disp);font-size:20px}
+textarea.code{font-family:ui-monospace,Consolas,monospace;font-size:12px;min-height:150px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;font-size:13.5px;z-index:80;box-shadow:0 8px 30px rgba(7,15,56,.3)}
+.landing{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr}
+.landing .brand{background:var(--navy);color:#fff;padding:56px 64px;display:flex;flex-direction:column;gap:28px;justify-content:space-between}
+.landing .formside{display:flex;align-items:center;justify-content:center;padding:24px;flex-direction:column;gap:16px}
+.authwrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg)}
+.admin-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.rowact{display:flex;gap:6px}
+.code-pre{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:var(--grey-bg);border-radius:10px;padding:10px 12px;overflow:auto;max-height:200px;white-space:pre-wrap}
+@media (max-width:860px){.landing{grid-template-columns:1fr}.landing .brand{padding:32px 24px}}
