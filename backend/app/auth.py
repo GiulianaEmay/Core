@@ -98,9 +98,20 @@ def _obtener_o_crear_usuario(clerk_user_id: str, db: Session) -> Usuario:
 
     nombre = " ".join(filter(None, [data.get("first_name"), data.get("last_name")])).strip()
 
-    rol = rol_inicial(email, verificado, db.query(Usuario).count() == 0, settings.admin_emails_list)
+    # Accesos creados por CORE para un cliente: llevan su cliente en Clerk y
+    # nunca son admin (aunque sean el primer usuario de una base nueva).
+    cliente_meta = (data.get("public_metadata") or {}).get("cliente_id")
+    if cliente_meta:
+        rol = models.Rol.cliente
+        cliente_id = cliente_meta if db.get(models.Cliente, cliente_meta) else None
+    else:
+        rol = rol_inicial(email, verificado, db.query(Usuario).count() == 0, settings.admin_emails_list)
+        cliente_id = None
 
-    usuario = Usuario(clerk_user_id=clerk_user_id, email=email, nombre=nombre, rol=rol)
+    usuario = Usuario(
+        clerk_user_id=clerk_user_id, email=email, nombre=nombre, rol=rol,
+        username=data.get("username"), cliente_id=cliente_id,
+    )
     db.add(usuario)
     db.commit()
     db.refresh(usuario)

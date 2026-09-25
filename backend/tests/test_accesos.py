@@ -9,7 +9,7 @@ def clerk(monkeypatch):
     """Clerk simulado: registra lo que se le pide, no toca la red."""
     llamadas = {"crear": [], "password": [], "borrar": []}
 
-    def crear(username, password, nombre):
+    def crear(username, password, nombre, cliente_id=None):
         llamadas["crear"].append((username, password, nombre))
         if username == "ocupado":
             raise clerk_admin.ClerkError("That username is taken. Please try another one.")

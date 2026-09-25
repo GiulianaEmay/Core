@@ -167,7 +167,7 @@ def crear_acceso(cliente_id: str, body: schemas.AccesoIn, db: Session = Depends(
         raise HTTPException(409, "Ese usuario ya existe")
     password = body.password or clerk_admin.generar_password()
     try:
-        clerk_id, email = clerk_admin.crear_usuario(body.username, password, body.nombre or cliente.grupo)
+        clerk_id, email = clerk_admin.crear_usuario(body.username, password, body.nombre or cliente.grupo, cliente_id)
     except clerk_admin.ClerkError as e:
         raise HTTPException(422, str(e))
     u = m.Usuario(

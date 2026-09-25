@@ -22,13 +22,9 @@ export default function Home() {
       <section className="formside">
         <div className="lform">
           <h2>Portal del cliente</h2>
-          <p className="muted">Ingrese con su correo o con su cuenta de Google.</p>
-          <Link className="btn" href="/sign-in">Iniciar sesión</Link>
-          <Link className="btn line" href="/sign-up">Crear cuenta</Link>
-          <p className="hint">
-            Si es la primera vez que ingresa, su líder de cuenta CORE vinculará su usuario a su empresa para que
-            pueda ver su información.
-          </p>
+          <p className="muted">Ingrese con el usuario y la clave que le entregó su líder de cuenta CORE.</p>
+          <Link className="btn" href="/ingresar">Ingresar</Link>
+          <Link className="btn line" href="/sign-in">Ingresar con Google</Link>
         </div>
       </section>
     </main>

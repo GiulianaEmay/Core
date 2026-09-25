@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
-from app.routers import admin, portal
+from app.routers import admin, login, portal
 
 app = FastAPI(title="Core · Portal del Cliente API", version="0.2.0")
 
@@ -14,6 +14,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(login.router)
 app.include_router(portal.router)
 app.include_router(admin.router)
 

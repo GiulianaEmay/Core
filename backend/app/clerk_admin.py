@@ -48,18 +48,79 @@ def _mensaje(resp: httpx.Response) -> str:
     return f"Error {resp.status_code} de Clerk"
 
 
-def crear_usuario(username: str, password: str, nombre: str) -> tuple[str, str]:
-    """Crea el usuario en Clerk. Devuelve (clerk_user_id, email)."""
+def crear_usuario(username: str, password: str, nombre: str, cliente_id: str | None = None) -> tuple[str, str]:
+    """Crea el usuario en Clerk. Devuelve (clerk_user_id, email).
+
+    El cliente se guarda en public_metadata para que el acceso funcione en
+    cualquier base (local o produccion) que use esta misma instancia de Clerk."""
     email = email_de(username)
     resp = httpx.post(
         f"{_API}/users",
         headers=_headers(),
-        json={"username": username, "email_address": [email], "password": password, "first_name": nombre},
+        json={
+            "username": username, "email_address": [email], "password": password, "first_name": nombre,
+            "public_metadata": {"cliente_id": cliente_id} if cliente_id else {},
+        },
         timeout=15,
     )
     if resp.status_code >= 400:
         raise ClerkError(_mensaje(resp))
     return resp.json()["id"], email
+
+
+def crear_usuario_con_email(email: str, password: str, nombre: str) -> str:
+    """Crea un usuario que entra con su correo y clave, con el correo ya
+    verificado (no exige codigo). Devuelve el clerk_user_id."""
+    resp = httpx.post(
+        f"{_API}/users",
+        headers=_headers(),
+        json={"email_address": [email], "password": password, "first_name": nombre},
+        timeout=15,
+    )
+    if resp.status_code >= 400:
+        raise ClerkError(_mensaje(resp))
+    return resp.json()["id"]
+
+
+def _buscar(params: dict) -> str | None:
+    resp = httpx.get(f"{_API}/users", headers=_headers(), params=params, timeout=15)
+    if resp.status_code >= 400:
+        raise ClerkError(_mensaje(resp))
+    usuarios = resp.json()
+    return usuarios[0]["id"] if usuarios else None
+
+
+def buscar_por_email(email: str) -> str | None:
+    return _buscar({"email_address": email})
+
+
+def buscar_por_username(username: str) -> str | None:
+    return _buscar({"username": username})
+
+
+def verificar_password(clerk_user_id: str, password: str) -> bool:
+    resp = httpx.post(
+        f"{_API}/users/{clerk_user_id}/verify_password", headers=_headers(), json={"password": password}, timeout=15
+    )
+    if resp.status_code == 200:
+        return bool(resp.json().get("verified"))
+    if resp.status_code in (400, 404, 422):
+        return False
+    raise ClerkError(_mensaje(resp))
+
+
+def crear_ticket(clerk_user_id: str) -> str:
+    """Token de un solo uso para iniciar sesion con la estrategia `ticket`.
+    No pasa por la verificacion de dispositivo nuevo (solo aplica a clave)."""
+    resp = httpx.post(
+        f"{_API}/sign_in_tokens",
+        headers=_headers(),
+        json={"user_id": clerk_user_id, "expires_in_seconds": 120},
+        timeout=15,
+    )
+    if resp.status_code >= 400:
+        raise ClerkError(_mensaje(resp))
+    return resp.json()["token"]
 
 
 def cambiar_password(clerk_user_id: str, password: str) -> None:
