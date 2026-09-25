@@ -1,6 +1,12 @@
 [build]
   base = "frontend"
   command = "npm run build"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "22"
+  # La clave publica de Clerk va en el bundle del navegador a proposito.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
